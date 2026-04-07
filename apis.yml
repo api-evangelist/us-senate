@@ -4,8 +4,7 @@ url: >-
 apis:
   - aid: us-senate:us-senate
     name: US Senate
-    tags:
-      - API
+    tags: []
     humanURL: https://lda.senate.gov
     properties:
       - url: https://lda.senate.gov
