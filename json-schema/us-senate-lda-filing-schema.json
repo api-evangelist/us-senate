@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/us-senate/main/json-schema/us-senate-lda-filing-schema.json",
+  "title": "Senate LDA Lobbying Filing",
+  "description": "JSON Schema for a Senate Lobbying Disclosure Act (LDA) filing record.",
+  "type": "object",
+  "properties": {
+    "filing_uuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for this filing"
+    },
+    "filing_type": {
+      "type": "string",
+      "description": "Filing type code (LD1, LD2, MM, YE, Q1, Q2, Q3, Q4)"
+    },
+    "filing_type_display": {
+      "type": "string",
+      "description": "Human-readable filing type"
+    },
+    "filing_year": {
+      "type": "integer",
+      "description": "Calendar year of the filing"
+    },
+    "filing_period": {
+      "type": "string",
+      "enum": ["registration", "first_quarter", "second_quarter", "mid_year", "third_quarter", "fourth_quarter", "year_end", "termination"],
+      "description": "Filing period identifier"
+    },
+    "income": {
+      "type": ["number", "null"],
+      "description": "Lobbying income reported (for lobbying firms)"
+    },
+    "expenses": {
+      "type": ["number", "null"],
+      "description": "Lobbying expenses reported (for self-employed lobbyists)"
+    },
+    "dt_posted": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the filing was posted"
+    },
+    "registrant": {
+      "$ref": "#/$defs/Registrant"
+    },
+    "client": {
+      "$ref": "#/$defs/Client"
+    },
+    "lobbying_activities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/LobbyingActivity"
+      }
+    }
+  },
+  "required": ["filing_uuid", "filing_type", "filing_year"],
+  "$defs": {
+    "Registrant": {
+      "type": "object",
+      "properties": {
+        "id": {"type": "integer"},
+        "name": {"type": "string"},
+        "city": {"type": ["string", "null"]},
+        "state": {"type": ["string", "null"]},
+        "country": {"type": "string"}
+      },
+      "required": ["id", "name"]
+    },
+    "Client": {
+      "type": "object",
+      "properties": {
+        "id": {"type": "integer"},
+        "name": {"type": "string"},
+        "state": {"type": ["string", "null"]},
+        "country": {"type": "string"}
+      },
+      "required": ["id", "name"]
+    },
+    "LobbyingActivity": {
+      "type": "object",
+      "properties": {
+        "general_issue_code": {
+          "type": "string",
+          "description": "Issue area code (e.g., TAX, HCR, DEF)"
+        },
+        "general_issue_code_display": {
+          "type": "string"
+        },
+        "description": {
+          "type": ["string", "null"],
+          "description": "Specific issues lobbied on"
+        },
+        "government_entities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {"type": "string"}
+            }
+          }
+        },
+        "lobbyists": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

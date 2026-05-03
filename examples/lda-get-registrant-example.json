@@ -1,0 +1,30 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://lda.senate.gov/api/v1/registrants/5001/?format=json",
+    "headers": {
+      "Authorization": "Token YOUR_API_KEY"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "id": 5001,
+      "url": "https://lda.senate.gov/api/v1/registrants/5001/?format=json",
+      "house_registrant_id": 12345,
+      "name": "Capitol Strategies Group",
+      "description": "Full-service government relations and lobbying firm",
+      "address_1": "1200 G Street NW, Suite 800",
+      "address_2": null,
+      "city": "Washington",
+      "state": "DC",
+      "state_display": "District of Columbia",
+      "zip": "20005",
+      "country": "US",
+      "country_display": "United States of America",
+      "contact_name": "Robert Johnson",
+      "contact_telephone": "202-555-0100",
+      "dt_updated": "2025-01-15T10:00:00-05:00"
+    }
+  }
+}

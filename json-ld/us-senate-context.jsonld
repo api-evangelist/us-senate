@@ -1,0 +1,92 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "lda": "https://lda.senate.gov/vocab/",
+    "org": "http://www.w3.org/ns/org#",
+
+    "LDAFiling": "lda:Filing",
+    "Registrant": "org:Organization",
+    "Client": "org:Organization",
+    "Lobbyist": "schema:Person",
+
+    "filing_uuid": {
+      "@id": "dcterms:identifier",
+      "@type": "xsd:string"
+    },
+    "filing_type": {
+      "@id": "lda:filingType",
+      "@type": "xsd:string"
+    },
+    "filing_year": {
+      "@id": "lda:filingYear",
+      "@type": "xsd:integer"
+    },
+    "filing_period": {
+      "@id": "lda:filingPeriod",
+      "@type": "xsd:string"
+    },
+    "income": {
+      "@id": "lda:income",
+      "@type": "xsd:decimal"
+    },
+    "expenses": {
+      "@id": "lda:expenses",
+      "@type": "xsd:decimal"
+    },
+    "dt_posted": {
+      "@id": "schema:datePublished",
+      "@type": "xsd:dateTime"
+    },
+    "registrant": {
+      "@id": "lda:registrant",
+      "@type": "@id"
+    },
+    "client": {
+      "@id": "lda:client",
+      "@type": "@id"
+    },
+    "lobbying_activities": {
+      "@id": "lda:lobbyingActivities",
+      "@container": "@set"
+    },
+    "general_issue_code": {
+      "@id": "lda:issueCode",
+      "@type": "xsd:string"
+    },
+    "general_issue_code_display": {
+      "@id": "lda:issueName",
+      "@type": "xsd:string"
+    },
+    "government_entities": {
+      "@id": "lda:governmentEntities",
+      "@container": "@set"
+    },
+    "name": {
+      "@id": "schema:name",
+      "@type": "xsd:string"
+    },
+    "first_name": {
+      "@id": "schema:givenName",
+      "@type": "xsd:string"
+    },
+    "last_name": {
+      "@id": "schema:familyName",
+      "@type": "xsd:string"
+    },
+    "city": {
+      "@id": "schema:addressLocality",
+      "@type": "xsd:string"
+    },
+    "state": {
+      "@id": "schema:addressRegion",
+      "@type": "xsd:string"
+    },
+    "country": {
+      "@id": "schema:addressCountry",
+      "@type": "xsd:string"
+    }
+  }
+}

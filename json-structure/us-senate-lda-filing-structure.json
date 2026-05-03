@@ -1,0 +1,38 @@
+{
+  "name": "Senate LDA Filing",
+  "description": "Structure of a Lobbying Disclosure Act filing from the Senate LDA REST API",
+  "fields": [
+    {"name": "filing_uuid", "type": "string (uuid)", "required": true, "description": "Unique filing identifier"},
+    {"name": "filing_type", "type": "string", "required": true, "description": "LD1, LD2, MM, YE, etc."},
+    {"name": "filing_year", "type": "integer", "required": true, "description": "Calendar year"},
+    {"name": "filing_period", "type": "string", "required": false, "description": "Quarter or period"},
+    {"name": "income", "type": "number|null", "required": false, "description": "Reported lobbying income"},
+    {"name": "expenses", "type": "number|null", "required": false, "description": "Reported lobbying expenses"},
+    {"name": "dt_posted", "type": "datetime", "required": false, "description": "Date posted"},
+    {"name": "registrant", "type": "Registrant", "required": false, "description": "Lobbying firm or individual"},
+    {"name": "client", "type": "Client", "required": false, "description": "Organization being lobbied for"},
+    {"name": "lobbying_activities", "type": "array[LobbyingActivity]", "required": false, "description": "Issue areas and lobbyists"}
+  ],
+  "nested": {
+    "Registrant": [
+      {"name": "id", "type": "integer"},
+      {"name": "name", "type": "string"},
+      {"name": "city", "type": "string|null"},
+      {"name": "state", "type": "string|null"},
+      {"name": "country", "type": "string"}
+    ],
+    "Client": [
+      {"name": "id", "type": "integer"},
+      {"name": "name", "type": "string"},
+      {"name": "state", "type": "string|null"},
+      {"name": "country", "type": "string"}
+    ],
+    "LobbyingActivity": [
+      {"name": "general_issue_code", "type": "string"},
+      {"name": "general_issue_code_display", "type": "string"},
+      {"name": "description", "type": "string|null"},
+      {"name": "government_entities", "type": "array[object]"},
+      {"name": "lobbyists", "type": "array[object]"}
+    ]
+  }
+}

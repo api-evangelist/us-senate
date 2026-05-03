@@ -1,0 +1,64 @@
+extends: "spectral:oas"
+rules:
+  # LDA API-specific rules
+  lda-path-trailing-slash:
+    description: LDA API paths end with a trailing slash
+    message: "Path '{{property}}' should end with a trailing slash"
+    severity: info
+    given: "$.paths[*]~"
+    then:
+      function: pattern
+      functionOptions:
+        match: "/$"
+
+  lda-format-parameter:
+    description: LDA API GET operations should support a format parameter
+    message: "GET operation should document the 'format' query parameter"
+    severity: info
+    given: "$.paths[*].get"
+    then:
+      function: truthy
+
+  lda-operation-summary-required:
+    description: All operations must have a summary
+    message: "Operation is missing a summary"
+    severity: error
+    given: "$.paths[*][*]"
+    then:
+      field: summary
+      function: truthy
+
+  lda-list-endpoints-paginated:
+    description: List endpoints must return paginated responses with count/next/previous
+    message: "List response schema should include count, next, previous, and results"
+    severity: warn
+    given: "$.paths[*].get.responses.200.content.application/json.schema"
+    then:
+      function: truthy
+
+  lda-operation-tags:
+    description: Operations must have at least one tag
+    message: "Operation has no tags"
+    severity: warn
+    given: "$.paths[*][*]"
+    then:
+      field: tags
+      function: truthy
+
+  lda-get-200-response:
+    description: All GET operations must define a 200 response
+    message: "GET operation missing 200 response"
+    severity: error
+    given: "$.paths[*].get"
+    then:
+      field: responses.200
+      function: truthy
+
+  lda-path-params-documented:
+    description: Path parameters must have description
+    message: "Path parameter missing description"
+    severity: warn
+    given: "$.paths[*][*].parameters[?(@.in == 'path')]"
+    then:
+      field: description
+      function: truthy

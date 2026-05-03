@@ -1,0 +1,69 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://lda.senate.gov/api/v1/filings/?filing_year=2024&filing_period=third_quarter&issue_code=TAX&format=json",
+    "headers": {
+      "Authorization": "Token YOUR_API_KEY"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "count": 3,
+      "next": null,
+      "previous": null,
+      "results": [
+        {
+          "url": "https://lda.senate.gov/api/v1/filings/abc12345-6789-def0-1234-56789abcdef0/?format=json",
+          "filing_uuid": "abc12345-6789-def0-1234-56789abcdef0",
+          "filing_type": "Q3",
+          "filing_type_display": "Third Quarter Report",
+          "filing_year": 2024,
+          "filing_period": "third_quarter",
+          "filing_period_display": "Third Quarter (Jul 1 - Sep 30)",
+          "filing_document_url": "https://lda.senate.gov/filings/public/filing/abc12345-6789-def0-1234-56789abcdef0/print/",
+          "income": 120000.00,
+          "expenses": null,
+          "dt_posted": "2024-10-15T09:30:00-05:00",
+          "registrant": {
+            "id": 5001,
+            "name": "Capitol Strategies Group",
+            "city": "Washington",
+            "state": "DC",
+            "country": "US"
+          },
+          "client": {
+            "id": 8001,
+            "name": "National Banking Association",
+            "country": "US",
+            "state": "DC"
+          },
+          "lobbying_activities": [
+            {
+              "general_issue_code": "TAX",
+              "general_issue_code_display": "Taxation/Internal Revenue Code",
+              "description": "Tax treatment of financial instruments; corporate tax reform provisions",
+              "government_entities": [
+                {"name": "SENATE"},
+                {"name": "HOUSE OF REPRESENTATIVES"},
+                {"name": "TREASURY, DEPARTMENT OF"}
+              ],
+              "lobbyists": [
+                {
+                  "lobbyist": {
+                    "id": 1001,
+                    "first_name": "Jane",
+                    "last_name": "Smith",
+                    "covered_position": null,
+                    "is_active_lobbyist": true
+                  },
+                  "is_new": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,117 @@
+vocabulary:
+  name: US Senate Lobbying Disclosure Vocabulary
+  description: >-
+    Domain vocabulary for the US Senate Lobbying Disclosure Act (LDA) API,
+    covering lobbying activities, registrations, and government transparency concepts.
+  version: "1.0.0"
+  created: "2026-05-03"
+  domain: Government Transparency
+
+terms:
+  - term: Lobbying Disclosure Act (LDA)
+    definition: >-
+      Federal law requiring lobbyists and lobbying firms to register with the
+      Senate and House and file periodic reports disclosing their lobbying activities,
+      clients, income, and expenses.
+    type: Law
+    tags: [Lobbying, Legal, Government]
+
+  - term: LD-1 Registration
+    definition: >-
+      The initial registration statement filed by a registrant when they first
+      register to lobby on behalf of a client.
+    type: Document
+    tags: [Lobbying, Filing]
+
+  - term: LD-2 Quarterly Report
+    definition: >-
+      Quarterly lobbying activity report filed to disclose specific lobbying
+      activities, issue areas, and income/expenses for each quarter.
+    type: Document
+    tags: [Lobbying, Filing]
+
+  - term: LD-203 Contribution Report
+    definition: >-
+      Semi-annual report filed by registrants and lobbyists disclosing
+      political contributions and payments to officials as required under
+      HLOGA (Honest Leadership and Open Government Act).
+    type: Document
+    tags: [Lobbying, Campaign Finance, Filing]
+
+  - term: Registrant
+    definition: >-
+      A lobbying firm or self-employed lobbyist that is registered with the
+      Senate to conduct lobbying activities on behalf of clients.
+    type: Entity
+    tags: [Lobbying]
+
+  - term: Client
+    definition: >-
+      An organization, company, or individual that employs a registrant to
+      conduct lobbying activities on their behalf.
+    type: Entity
+    tags: [Lobbying]
+
+  - term: Lobbyist
+    definition: >-
+      An individual employed or retained by a registrant who makes more than
+      one lobbying contact as part of their services.
+    type: Person
+    tags: [Lobbying]
+
+  - term: Covered Position
+    definition: >-
+      A senior government position (e.g., Member of Congress, senior executive
+      branch official) held by a lobbyist within the past two years, requiring
+      disclosure.
+    type: Legal
+    tags: [Lobbying, Compliance]
+
+  - term: Issue Code
+    definition: >-
+      One of the 79 issue area codes (e.g., TAX, HCR, DEF) used to categorize
+      the subject matter of lobbying activities in LDA reports.
+    type: Classification
+    tags: [Lobbying, Reference]
+
+  - term: Government Entity
+    definition: >-
+      A specific government body, agency, or official that was lobbied, as
+      disclosed in an LD-2 quarterly report.
+    type: Reference
+    tags: [Lobbying, Government]
+
+  - term: Filing Period
+    definition: >-
+      The time period covered by a lobbying report (Q1: Jan-Mar, Q2: Apr-Jun,
+      Mid-Year: Jan-Jun, Q3: Jul-Sep, Q4/Year-End: Oct-Dec or Jan-Dec).
+    type: Classification
+    tags: [Lobbying, Filing]
+
+  - term: Income
+    definition: >-
+      For lobbying firms: the total amount received from a client for lobbying
+      activities during the reporting period.
+    type: Financial
+    tags: [Lobbying, Finance]
+
+  - term: Expenses
+    definition: >-
+      For self-employed lobbyists: the total amount spent on lobbying activities
+      during the reporting period.
+    type: Financial
+    tags: [Lobbying, Finance]
+
+  - term: HLOGA
+    definition: >-
+      The Honest Leadership and Open Government Act of 2007, which amended the
+      LDA to add contribution reporting requirements and tighten disclosure rules.
+    type: Law
+    tags: [Lobbying, Legal]
+
+  - term: Senate Office of Public Records (SOPR)
+    definition: >-
+      The Senate office responsible for receiving, processing, and making public
+      all LDA disclosure filings.
+    type: Organization
+    tags: [Lobbying, Government]
