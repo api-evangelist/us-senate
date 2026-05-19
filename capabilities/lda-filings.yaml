@@ -1,0 +1,200 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: US Senate Lobbying Disclosure Act (LDA) API — Filings
+  description: 'US Senate Lobbying Disclosure Act (LDA) API — Filings. 2 operations. Lead operation: List Lobbying Disclosure
+    Filings. Self-contained Naftiko capability covering one Us Senate business surface.'
+  tags:
+  - Us Senate
+  - Filings
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    US_SENATE_API_KEY: US_SENATE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: lda-filings
+    baseUri: https://lda.senate.gov/api/v1
+    description: US Senate Lobbying Disclosure Act (LDA) API — Filings business capability. Self-contained, no shared references.
+    resources:
+    - name: filings
+      path: /filings/
+      operations:
+      - name: listfilings
+        method: GET
+        description: List Lobbying Disclosure Filings
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: filing_type
+          in: query
+          type: string
+          description: Filing type code (e.g., LD1=Registration, LD2=Quarterly Report, MM=Mid-Year Report)
+        - name: filing_year
+          in: query
+          type: integer
+          description: Year of the filing
+        - name: filing_period
+          in: query
+          type: string
+          description: Filing period (e.g., first_quarter, second_quarter, mid_year, year_end)
+        - name: registrant_id
+          in: query
+          type: integer
+          description: Filter by registrant ID
+        - name: client_id
+          in: query
+          type: integer
+          description: Filter by client ID
+        - name: registrant_name
+          in: query
+          type: string
+          description: Filter by registrant name (partial match)
+        - name: client_name
+          in: query
+          type: string
+          description: Filter by client name (partial match)
+        - name: lobbyist_name
+          in: query
+          type: string
+          description: Filter by lobbyist name
+        - name: issue_code
+          in: query
+          type: string
+          description: Filter by lobbying issue code (e.g., TAX, HCR, DEF)
+        - name: dt_posted
+          in: query
+          type: string
+          description: Filter by date posted (ISO 8601 date)
+        - name: page
+          in: query
+          type: integer
+          description: Page number for pagination
+        - name: limit
+          in: query
+          type: integer
+          description: Number of results per page (default 25, max 25)
+        - name: format
+          in: query
+          type: string
+          description: Response format
+    - name: filings-filing_uuid
+      path: /filings/{filing_uuid}/
+      operations:
+      - name: getfiling
+        method: GET
+        description: Get Lobbying Filing by UUID
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: filing_uuid
+          in: path
+          type: string
+          description: Unique identifier (UUID) of the filing
+          required: true
+        - name: format
+          in: query
+          type: string
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.US_SENATE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: lda-filings-rest
+    port: 8080
+    description: REST adapter for US Senate Lobbying Disclosure Act (LDA) API — Filings. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/filings
+      name: filings
+      description: REST surface for filings.
+      operations:
+      - method: GET
+        name: listfilings
+        description: List Lobbying Disclosure Filings
+        call: lda-filings.listfilings
+        with:
+          filing_type: rest.filing_type
+          filing_year: rest.filing_year
+          filing_period: rest.filing_period
+          registrant_id: rest.registrant_id
+          client_id: rest.client_id
+          registrant_name: rest.registrant_name
+          client_name: rest.client_name
+          lobbyist_name: rest.lobbyist_name
+          issue_code: rest.issue_code
+          dt_posted: rest.dt_posted
+          page: rest.page
+          limit: rest.limit
+          format: rest.format
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/filings/{filing-uuid}
+      name: filings-filing-uuid
+      description: REST surface for filings-filing_uuid.
+      operations:
+      - method: GET
+        name: getfiling
+        description: Get Lobbying Filing by UUID
+        call: lda-filings.getfiling
+        with:
+          filing_uuid: rest.filing_uuid
+          format: rest.format
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: lda-filings-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for US Senate Lobbying Disclosure Act (LDA) API — Filings. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: list-lobbying-disclosure-filings
+      description: List Lobbying Disclosure Filings
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: lda-filings.listfilings
+      with:
+        filing_type: tools.filing_type
+        filing_year: tools.filing_year
+        filing_period: tools.filing_period
+        registrant_id: tools.registrant_id
+        client_id: tools.client_id
+        registrant_name: tools.registrant_name
+        client_name: tools.client_name
+        lobbyist_name: tools.lobbyist_name
+        issue_code: tools.issue_code
+        dt_posted: tools.dt_posted
+        page: tools.page
+        limit: tools.limit
+        format: tools.format
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-lobbying-filing-uuid
+      description: Get Lobbying Filing by UUID
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: lda-filings.getfiling
+      with:
+        filing_uuid: tools.filing_uuid
+        format: tools.format
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,102 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: US Senate Lobbying Disclosure Act (LDA) API — Contributions
+  description: 'US Senate Lobbying Disclosure Act (LDA) API — Contributions. 1 operations. Lead operation: List Contribution
+    Reports (LD-203). Self-contained Naftiko capability covering one Us Senate business surface.'
+  tags:
+  - Us Senate
+  - Contributions
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    US_SENATE_API_KEY: US_SENATE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: lda-contributions
+    baseUri: https://lda.senate.gov/api/v1
+    description: US Senate Lobbying Disclosure Act (LDA) API — Contributions business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: contributions
+      path: /contributions/
+      operations:
+      - name: listcontributions
+        method: GET
+        description: List Contribution Reports (LD-203)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: registrant_name
+          in: query
+          type: string
+          description: Filter by registrant name
+        - name: filing_year
+          in: query
+          type: integer
+        - name: filing_period
+          in: query
+          type: string
+        - name: page
+          in: query
+          type: integer
+        - name: format
+          in: query
+          type: string
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.US_SENATE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: lda-contributions-rest
+    port: 8080
+    description: REST adapter for US Senate Lobbying Disclosure Act (LDA) API — Contributions. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/contributions
+      name: contributions
+      description: REST surface for contributions.
+      operations:
+      - method: GET
+        name: listcontributions
+        description: List Contribution Reports (LD-203)
+        call: lda-contributions.listcontributions
+        with:
+          registrant_name: rest.registrant_name
+          filing_year: rest.filing_year
+          filing_period: rest.filing_period
+          page: rest.page
+          format: rest.format
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: lda-contributions-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for US Senate Lobbying Disclosure Act (LDA) API — Contributions. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: list-contribution-reports-ld-203
+      description: List Contribution Reports (LD-203)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: lda-contributions.listcontributions
+      with:
+        registrant_name: tools.registrant_name
+        filing_year: tools.filing_year
+        filing_period: tools.filing_period
+        page: tools.page
+        format: tools.format
+      outputParameters:
+      - type: object
+        mapping: $.
