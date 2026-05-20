@@ -1,5 +1,8 @@
 aid: us-senate
 url: https://raw.githubusercontent.com/api-evangelist/us-senate/refs/heads/main/apis.yml
+common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/ussenate
 apis:
 - aid: us-senate:lda-api
   name: Senate Lobbying Disclosure Act (LDA) API
