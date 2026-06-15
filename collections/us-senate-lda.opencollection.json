@@ -1,0 +1,455 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "US Senate Lobbying Disclosure Act (LDA) API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Filings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Lobbying Disclosure Filings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/filings/",
+            "params": [
+              {
+                "name": "filing_type",
+                "value": "",
+                "type": "query",
+                "description": "Filing type code (e.g., LD1=Registration, LD2=Quarterly Report, MM=Mid-Year Report)"
+              },
+              {
+                "name": "filing_year",
+                "value": "",
+                "type": "query",
+                "description": "Year of the filing"
+              },
+              {
+                "name": "filing_period",
+                "value": "",
+                "type": "query",
+                "description": "Filing period (e.g., first_quarter, second_quarter, mid_year, year_end)"
+              },
+              {
+                "name": "registrant_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by registrant ID"
+              },
+              {
+                "name": "client_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by client ID"
+              },
+              {
+                "name": "registrant_name",
+                "value": "",
+                "type": "query",
+                "description": "Filter by registrant name (partial match)"
+              },
+              {
+                "name": "client_name",
+                "value": "",
+                "type": "query",
+                "description": "Filter by client name (partial match)"
+              },
+              {
+                "name": "lobbyist_name",
+                "value": "",
+                "type": "query",
+                "description": "Filter by lobbyist name"
+              },
+              {
+                "name": "issue_code",
+                "value": "",
+                "type": "query",
+                "description": "Filter by lobbying issue code (e.g., TAX, HCR, DEF)"
+              },
+              {
+                "name": "dt_posted",
+                "value": "",
+                "type": "query",
+                "description": "Filter by date posted (ISO 8601 date)"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for pagination"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page (default 25, max 25)"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "Response format"
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of lobbying disclosure filings. Supports filtering by filing type, year, period, registrant, and client."
+        },
+        {
+          "info": {
+            "name": "Get Lobbying Filing by UUID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/filings/:filing_uuid/",
+            "params": [
+              {
+                "name": "filing_uuid",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier (UUID) of the filing"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve a specific lobbying disclosure filing by its UUID."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Registrants",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Lobbying Registrants",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/registrants/",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "Filter by registrant name (partial match)"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of lobbying registrants (firms and individuals)."
+        },
+        {
+          "info": {
+            "name": "Get Registrant by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/registrants/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Registrant ID"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve a specific lobbying registrant by ID."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Clients",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Lobbying Clients",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/clients/",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "Filter by client name (partial match)"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of clients on whose behalf lobbying is conducted."
+        },
+        {
+          "info": {
+            "name": "Get Client by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/clients/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Client ID"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve a specific lobbying client by ID."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Lobbyists",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Lobbyists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/lobbyists/",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "Filter by lobbyist name (partial match)"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of individual lobbyist records."
+        },
+        {
+          "info": {
+            "name": "Get Lobbyist by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/lobbyists/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Lobbyist ID"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve a specific lobbyist record by ID."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Contributions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Contribution Reports (LD-203)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/contributions/",
+            "params": [
+              {
+                "name": "registrant_name",
+                "value": "",
+                "type": "query",
+                "description": "Filter by registrant name"
+              },
+              {
+                "name": "filing_year",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filing_period",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of semi-annual campaign contribution reports."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Constants",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Filing Type Codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/constants/filing/filingtypes/",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns all LDA filing type codes and their descriptions."
+        },
+        {
+          "info": {
+            "name": "Get Lobbying Activity Issue Codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/constants/filing/lobbyingactivityissues/",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns all issue area codes used to categorize lobbying activities."
+        },
+        {
+          "info": {
+            "name": "Get Government Entity Codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/constants/filing/governmententities/",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns all government entity codes for lobbied agencies and bodies."
+        },
+        {
+          "info": {
+            "name": "Get Country Codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/constants/general/countries/"
+          },
+          "docs": "Returns country code reference data."
+        },
+        {
+          "info": {
+            "name": "Get US State Codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/constants/general/states/"
+          },
+          "docs": "Returns US state code reference data."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

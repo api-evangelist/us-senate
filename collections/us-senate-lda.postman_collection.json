@@ -1,0 +1,2065 @@
+{
+  "item": [
+    {
+      "id": "f6b13a44-ba11-4211-88f1-8df36786e962",
+      "name": "Filings",
+      "description": {
+        "content": "Lobbying disclosure filings (LD-1, LD-2, LD-203)",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8324de1c-673b-4499-8ef2-65ad8df7fac5",
+          "name": "List Lobbying Disclosure Filings",
+          "request": {
+            "name": "List Lobbying Disclosure Filings",
+            "description": {
+              "content": "Returns a paginated list of lobbying disclosure filings. Supports filtering by filing type, year, period, registrant, and client.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "filings",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filing_type",
+                  "value": "<string>",
+                  "description": "Filing type code (e.g., LD1=Registration, LD2=Quarterly Report, MM=Mid-Year Report)"
+                },
+                {
+                  "disabled": false,
+                  "key": "filing_year",
+                  "value": "<integer>",
+                  "description": "Year of the filing"
+                },
+                {
+                  "disabled": false,
+                  "key": "filing_period",
+                  "value": "<string>",
+                  "description": "Filing period (e.g., first_quarter, second_quarter, mid_year, year_end)"
+                },
+                {
+                  "disabled": false,
+                  "key": "registrant_id",
+                  "value": "<integer>",
+                  "description": "Filter by registrant ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "client_id",
+                  "value": "<integer>",
+                  "description": "Filter by client ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "registrant_name",
+                  "value": "<string>",
+                  "description": "Filter by registrant name (partial match)"
+                },
+                {
+                  "disabled": false,
+                  "key": "client_name",
+                  "value": "<string>",
+                  "description": "Filter by client name (partial match)"
+                },
+                {
+                  "disabled": false,
+                  "key": "lobbyist_name",
+                  "value": "<string>",
+                  "description": "Filter by lobbyist name"
+                },
+                {
+                  "disabled": false,
+                  "key": "issue_code",
+                  "value": "<string>",
+                  "description": "Filter by lobbying issue code (e.g., TAX, HCR, DEF)"
+                },
+                {
+                  "disabled": false,
+                  "key": "dt_posted",
+                  "value": "<date>",
+                  "description": "Filter by date posted (ISO 8601 date)"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number for pagination"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25",
+                  "description": "Number of results per page (default 25, max 25)"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "Response format"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6a71d0d3-6c3b-4a96-a48b-c4f1eeaff20d",
+              "name": "Paginated list of filings",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "filings",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filing_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filing_year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "filing_period",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "registrant_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "client_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "registrant_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "client_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lobbyist_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "issue_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dt_posted",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 8039,\n  \"next\": \"http://GSZKILC.tmGbI8aqjHs0d-EVDYVqPz\",\n  \"previous\": \"http://zw.tcbK-GMnutXo.3VCny1oW4\",\n  \"results\": [\n    {\n      \"url\": \"http://uavSuu.jojba3eg\",\n      \"filing_uuid\": \"d1b50138-899f-76bc-29fc-7e473fac3a95\",\n      \"filing_type\": \"string\",\n      \"filing_type_display\": \"string\",\n      \"filing_year\": 3429,\n      \"filing_period\": \"string\",\n      \"filing_period_display\": \"string\",\n      \"filing_document_url\": \"http://qjZagDSreQJKxLoOTsmhlGlEcYcr.meiUX8hBs-PxTuaRbGS7w-iHNha4cqn0\",\n      \"income\": 7142.103001131242,\n      \"expenses\": 9698.03363036021,\n      \"dt_posted\": \"2025-03-10T20:49:23.664Z\",\n      \"registrant\": {\n        \"id\": 5848,\n        \"url\": \"https://ucZUcgsm.xisJS3h27TX7tLNO9GJRQW,bwo2YvQHMSt-+xM2ragLz3uw6CJgI1rC9YOR0azJnRuJ\",\n        \"house_registrant_id\": 4019,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"address_1\": \"string\",\n        \"city\": \"string\",\n        \"state\": \"string\",\n        \"zip\": \"string\",\n        \"country\": \"string\",\n        \"contact_name\": \"string\",\n        \"contact_telephone\": \"string\",\n        \"dt_updated\": \"1997-06-03T19:56:17.704Z\"\n      },\n      \"client\": {\n        \"id\": 3198,\n        \"url\": \"https://dhIbhsEdQfqHrPGKUYfZ.znwgQ8d96li3w6\",\n        \"client_id\": 5435,\n        \"name\": \"string\",\n        \"general_description\": \"string\",\n        \"client_government_entity\": true,\n        \"state\": \"string\",\n        \"country\": \"string\",\n        \"effective_date\": \"1976-06-18\"\n      },\n      \"lobbying_activities\": [\n        {\n          \"general_issue_code\": \"string\",\n          \"general_issue_code_display\": \"string\",\n          \"description\": \"string\",\n          \"government_entities\": [\n            {\n              \"name\": \"string\"\n            },\n            {\n              \"name\": \"string\"\n            }\n          ],\n          \"lobbyists\": [\n            {\n              \"lobbyist\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"is_new\": true\n            },\n            {\n              \"lobbyist\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"is_new\": true\n            }\n          ]\n        },\n        {\n          \"general_issue_code\": \"string\",\n          \"general_issue_code_display\": \"string\",\n          \"description\": \"string\",\n          \"government_entities\": [\n            {\n              \"name\": \"string\"\n            },\n            {\n              \"name\": \"string\"\n            }\n          ],\n          \"lobbyists\": [\n            {\n              \"lobbyist\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"is_new\": false\n            },\n            {\n              \"lobbyist\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"is_new\": true\n            }\n          ]\n        }\n      ]\n    },\n    {\n      \"url\": \"https://ZhVjNMgYZcUsog.jgtbf8Vk\",\n      \"filing_uuid\": \"7a4a52f4-509c-de9e-3236-d64a94e493e7\",\n      \"filing_type\": \"string\",\n      \"filing_type_display\": \"string\",\n      \"filing_year\": 4702,\n      \"filing_period\": \"string\",\n      \"filing_period_display\": \"string\",\n      \"filing_document_url\": \"http://imAxcCXIuHyuDxynqitPDsnaxHFpYb.cpbvjnVYSSYWZfFqGIbuE.gX4XPAeVbr+fR3HAMccOMJYSgmmWSYoN+QW9Ff.mbvudvCY26\",\n      \"income\": 793.281120437902,\n      \"expenses\": 7536.782204616046,\n      \"dt_posted\": \"1948-10-17T18:38:25.063Z\",\n      \"registrant\": {\n        \"id\": 9713,\n        \"url\": \"http://TkfcORERVuACEsUqKlrMSCyacEd.wueS,7dI1CiobmuwUNiLfxJQ3LkGpVfg,\",\n        \"house_registrant_id\": 4258,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"address_1\": \"string\",\n        \"city\": \"string\",\n        \"state\": \"string\",\n        \"zip\": \"string\",\n        \"country\": \"string\",\n        \"contact_name\": \"string\",\n        \"contact_telephone\": \"string\",\n        \"dt_updated\": \"1975-11-03T11:56:32.771Z\"\n      },\n      \"client\": {\n        \"id\": 5224,\n        \"url\": \"https://Lalh.vmetrKBgF+cbW8DnjS3mmqMw94YUnRft8rn\",\n        \"client_id\": 1651,\n        \"name\": \"string\",\n        \"general_description\": \"string\",\n        \"client_government_entity\": true,\n        \"state\": \"string\",\n        \"country\": \"string\",\n        \"effective_date\": \"2021-04-01\"\n      },\n      \"lobbying_activities\": [\n        {\n          \"general_issue_code\": \"string\",\n          \"general_issue_code_display\": \"string\",\n          \"description\": \"string\",\n          \"government_entities\": [\n            {\n              \"name\": \"string\"\n            },\n            {\n              \"name\": \"string\"\n            }\n          ],\n          \"lobbyists\": [\n            {\n              \"lobbyist\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"is_new\": true\n            },\n            {\n              \"lobbyist\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"is_new\": false\n            }\n          ]\n        },\n        {\n          \"general_issue_code\": \"string\",\n          \"general_issue_code_display\": \"string\",\n          \"description\": \"string\",\n          \"government_entities\": [\n            {\n              \"name\": \"string\"\n            },\n            {\n              \"name\": \"string\"\n            }\n          ],\n          \"lobbyists\": [\n            {\n              \"lobbyist\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"is_new\": true\n            },\n            {\n              \"lobbyist\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"is_new\": true\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e1c1124e-1d67-4117-8940-4631d13282a3",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "filings",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filing_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filing_year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "filing_period",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "registrant_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "client_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "registrant_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "client_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lobbyist_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "issue_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dt_posted",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e86c4f0d-c28a-4e89-aa5f-52af49cbce3d",
+              "name": "Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "filings",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filing_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filing_year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "filing_period",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "registrant_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "client_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "registrant_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "client_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lobbyist_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "issue_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dt_posted",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6b98c529-2738-4a68-ae84-57961f3163c4",
+          "name": "Get Lobbying Filing by UUID",
+          "request": {
+            "name": "Get Lobbying Filing by UUID",
+            "description": {
+              "content": "Retrieve a specific lobbying disclosure filing by its UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "filings",
+                ":filing_uuid",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "filing_uuid",
+                  "description": "(Required) Unique identifier (UUID) of the filing"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dc73e89b-a117-4fdb-918b-1e0084318027",
+              "name": "Filing details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "filings",
+                    ":filing_uuid",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "filing_uuid",
+                      "description": "(Required) Unique identifier (UUID) of the filing"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"url\": \"http://qI.evbtKJkHrZZCu6kC4M8iJH2reSafsi4cya.xO7Plfqv,+RdZ7Ld5OjOG42+0.Roz8A2lM\",\n  \"filing_uuid\": \"53daffc7-d94e-8d26-3969-9854fe05693f\",\n  \"filing_type\": \"string\",\n  \"filing_type_display\": \"string\",\n  \"filing_year\": 1638,\n  \"filing_period\": \"string\",\n  \"filing_period_display\": \"string\",\n  \"filing_document_url\": \"https://KgDoKpQURxdGgj.kpxgRJZsfMvK2FNUtR,cuQ+8Zvp3,bnQ60ePt.-Zs5eyCHwg4xt\",\n  \"income\": 6108.158418570369,\n  \"expenses\": 5055.36120188309,\n  \"dt_posted\": \"2003-11-24T20:09:06.614Z\",\n  \"registrant\": {\n    \"id\": 892,\n    \"url\": \"https://qvNQP.ntpYlPBrZMawQFoo3zciy8ub3eNdX2SNgV02EmjDXcG-d5uNy\",\n    \"house_registrant_id\": 9701,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"address_1\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"zip\": \"string\",\n    \"country\": \"string\",\n    \"contact_name\": \"string\",\n    \"contact_telephone\": \"string\",\n    \"dt_updated\": \"2013-02-26T14:53:35.252Z\"\n  },\n  \"client\": {\n    \"id\": 7719,\n    \"url\": \"https://pVdWwiiaRccb.owm5elAIU,yYtAdXfbskZm.YTV9ekZEEMQIql\",\n    \"client_id\": 2345,\n    \"name\": \"string\",\n    \"general_description\": \"string\",\n    \"client_government_entity\": false,\n    \"state\": \"string\",\n    \"country\": \"string\",\n    \"effective_date\": \"2019-10-12\"\n  },\n  \"lobbying_activities\": [\n    {\n      \"general_issue_code\": \"string\",\n      \"general_issue_code_display\": \"string\",\n      \"description\": \"string\",\n      \"government_entities\": [\n        {\n          \"name\": \"string\"\n        },\n        {\n          \"name\": \"string\"\n        }\n      ],\n      \"lobbyists\": [\n        {\n          \"lobbyist\": {\n            \"id\": 9190,\n            \"url\": \"https://KfHlHoqpzsVJcrsTiRWXmweHqtbYUtvfB.tzvwqDjm0JLI,kFDA8EnqLyO+a.YCpDvBx.If+PqMrGNeOJt\",\n            \"prefix\": \"string\",\n            \"first_name\": \"string\",\n            \"last_name\": \"string\",\n            \"suffix\": \"string\",\n            \"covered_position\": \"string\",\n            \"is_active_lobbyist\": false\n          },\n          \"is_new\": true\n        },\n        {\n          \"lobbyist\": {\n            \"id\": 7630,\n            \"url\": \"https://QMh.fupjAwG4Iqj1vcRlumXzLb8zpaG7Iv0AnD5LANVftmip\",\n            \"prefix\": \"string\",\n            \"first_name\": \"string\",\n            \"last_name\": \"string\",\n            \"suffix\": \"string\",\n            \"covered_position\": \"string\",\n            \"is_active_lobbyist\": true\n          },\n          \"is_new\": true\n        }\n      ]\n    },\n    {\n      \"general_issue_code\": \"string\",\n      \"general_issue_code_display\": \"string\",\n      \"description\": \"string\",\n      \"government_entities\": [\n        {\n          \"name\": \"string\"\n        },\n        {\n          \"name\": \"string\"\n        }\n      ],\n      \"lobbyists\": [\n        {\n          \"lobbyist\": {\n            \"id\": 6853,\n            \"url\": \"https://UbOi.cdw3yDcwo95FiVz8oLMa0w6SgiMHokmI3-\",\n            \"prefix\": \"string\",\n            \"first_name\": \"string\",\n            \"last_name\": \"string\",\n            \"suffix\": \"string\",\n            \"covered_position\": \"string\",\n            \"is_active_lobbyist\": true\n          },\n          \"is_new\": true\n        },\n        {\n          \"lobbyist\": {\n            \"id\": 2927,\n            \"url\": \"https://gKkLnwlrLqVnhGIvLqD.mzxxwXxx.sLuP-,DLJLO8.SwlFc\",\n            \"prefix\": \"string\",\n            \"first_name\": \"string\",\n            \"last_name\": \"string\",\n            \"suffix\": \"string\",\n            \"covered_position\": \"string\",\n            \"is_active_lobbyist\": true\n          },\n          \"is_new\": true\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7be0e252-470e-4784-915b-a31a18c67744",
+              "name": "Filing not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "filings",
+                    ":filing_uuid",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "filing_uuid",
+                      "description": "(Required) Unique identifier (UUID) of the filing"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "88b338c8-c996-4e36-b6be-6054174c57a0",
+      "name": "Registrants",
+      "description": {
+        "content": "Lobbying firm and self-employed lobbyist registrations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "984694e8-9044-4ad9-901c-1241955d3a65",
+          "name": "List Lobbying Registrants",
+          "request": {
+            "name": "List Lobbying Registrants",
+            "description": {
+              "content": "Returns a paginated list of lobbying registrants (firms and individuals).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "registrants",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Filter by registrant name (partial match)"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f372cc13-4129-4751-9934-6a52fd1f5a8c",
+              "name": "Paginated list of registrants",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrants",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 581,\n  \"next\": \"https://rpuOqmyqjmMGyDGm.bqXaPMDgUIcmmrG58tuyRww6qegtM6dLtxTzEBwpFGTSVoRhRY\",\n  \"previous\": \"http://KKdYcIlkFsSEBpDYG.yaIeYEHMp6kcqLlbvz3XwbJs+,XXyOMe6OrSzhks9Yr3I\",\n  \"results\": [\n    {\n      \"id\": 9472,\n      \"url\": \"http://SxDbwyvELVXWky.nsyWqrq1HM\",\n      \"house_registrant_id\": 3663,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"address_1\": \"string\",\n      \"city\": \"string\",\n      \"state\": \"string\",\n      \"zip\": \"string\",\n      \"country\": \"string\",\n      \"contact_name\": \"string\",\n      \"contact_telephone\": \"string\",\n      \"dt_updated\": \"1979-01-13T16:21:33.981Z\"\n    },\n    {\n      \"id\": 5692,\n      \"url\": \"http://dSmfXj.egyxSYkyeSYbgrXGrQ.FPTzBkO+e\",\n      \"house_registrant_id\": 7949,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"address_1\": \"string\",\n      \"city\": \"string\",\n      \"state\": \"string\",\n      \"zip\": \"string\",\n      \"country\": \"string\",\n      \"contact_name\": \"string\",\n      \"contact_telephone\": \"string\",\n      \"dt_updated\": \"1955-04-19T05:49:04.427Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4f1b1d22-333c-4f89-9b06-da0f0c554706",
+          "name": "Get Registrant by ID",
+          "request": {
+            "name": "Get Registrant by ID",
+            "description": {
+              "content": "Retrieve a specific lobbying registrant by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "registrants",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Registrant ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d6052f39-eed6-4b6e-ad02-505bb77d3d76",
+              "name": "Registrant details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrants",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Registrant ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 7212,\n  \"url\": \"http://rgNUfKZUqVmnGBvhhKIxiRoWZqfuQMM.poigD7fzZ7c9g8,lziclbWzn3cvyPB5GpUkLg0rEYr6rqhGGLQSMiVtbPDzb0urrLcNil3V1MKg+HtDJjm++OP4GBr\",\n  \"house_registrant_id\": 8440,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"address_1\": \"string\",\n  \"city\": \"string\",\n  \"state\": \"string\",\n  \"zip\": \"string\",\n  \"country\": \"string\",\n  \"contact_name\": \"string\",\n  \"contact_telephone\": \"string\",\n  \"dt_updated\": \"1956-04-20T19:29:11.483Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "681703e7-8269-42e8-ae15-0fef04b4cc39",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrants",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Registrant ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "8faac2d4-d404-4d18-996c-5a16bd024b30",
+      "name": "Clients",
+      "description": {
+        "content": "Clients on whose behalf lobbying is conducted",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b8254f90-fd99-4b31-ab18-3fde55162f3f",
+          "name": "List Lobbying Clients",
+          "request": {
+            "name": "List Lobbying Clients",
+            "description": {
+              "content": "Returns a paginated list of clients on whose behalf lobbying is conducted.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "clients",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Filter by client name (partial match)"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6fdb03d9-fb8a-4f7a-8f7a-5c1e79c64ec9",
+              "name": "Paginated list of clients",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clients",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 9758,\n  \"next\": \"http://EwXxEOdIXqeeZUxbBnoUprUswgNi.qcruqS2ijPgFN3mqj3fgEtWzTZxH\",\n  \"previous\": \"https://AqbEaaZx.wzgAqUQrbg0W0bwXJAhNOCNY1I0isDXM-Z,PDJzE5G6ESbBMO2uIAsbSL\",\n  \"results\": [\n    {\n      \"id\": 4447,\n      \"url\": \"http://MZDbqLkDlNcSpWj.pavKOScElm+qfUpZNZsTvTV3JTJ+6YOB4ancQH6zlQMghp3V\",\n      \"client_id\": 860,\n      \"name\": \"string\",\n      \"general_description\": \"string\",\n      \"client_government_entity\": false,\n      \"state\": \"string\",\n      \"country\": \"string\",\n      \"effective_date\": \"1949-04-11\"\n    },\n    {\n      \"id\": 8987,\n      \"url\": \"https://XvfftzWDYDZuJKXCmUyJjlSu.fqULtevXvmj4iWPag2CpltBr-vyAnxzSWza6q\",\n      \"client_id\": 2986,\n      \"name\": \"string\",\n      \"general_description\": \"string\",\n      \"client_government_entity\": true,\n      \"state\": \"string\",\n      \"country\": \"string\",\n      \"effective_date\": \"1954-05-04\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "509f94dc-3bbf-4266-b024-1239cd50731d",
+          "name": "Get Client by ID",
+          "request": {
+            "name": "Get Client by ID",
+            "description": {
+              "content": "Retrieve a specific lobbying client by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "clients",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Client ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9da4cc56-ee89-4818-b412-a09e50b9f4ba",
+              "name": "Client details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clients",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Client ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 1007,\n  \"url\": \"http://BvmbKDmsuuVbvhxNF.uwADgtMYVPypvKVJg8fq\",\n  \"client_id\": 3750,\n  \"name\": \"string\",\n  \"general_description\": \"string\",\n  \"client_government_entity\": false,\n  \"state\": \"string\",\n  \"country\": \"string\",\n  \"effective_date\": \"1970-02-07\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8871ba2d-e786-4598-992d-f611af6e2938",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clients",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Client ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "51cee3cb-193e-4c4e-b8da-62e513b80fe8",
+      "name": "Lobbyists",
+      "description": {
+        "content": "Individual lobbyist records",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "be016f1f-7110-49b3-ae04-ddd874108102",
+          "name": "List Lobbyists",
+          "request": {
+            "name": "List Lobbyists",
+            "description": {
+              "content": "Returns a paginated list of individual lobbyist records.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "lobbyists",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Filter by lobbyist name (partial match)"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d25ceb0f-c26d-4928-8f33-4fcd2a0af14b",
+              "name": "Paginated list of lobbyists",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lobbyists",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 6748,\n  \"next\": \"http://hdCwVsYcZUGHLMo.utVWn2FCld8oAXmQ9hsSu\",\n  \"previous\": \"https://HYqBGDWR.qtDxh+EuyXecKfz8IjD8rNPVOvHmEjHDZHcu,AG\",\n  \"results\": [\n    {\n      \"id\": 4861,\n      \"url\": \"https://loLl.lsmi3Hc3OEwQ4T7Lg0OHaBm9.1OWy8ewokvWcQk+pX52pB\",\n      \"prefix\": \"string\",\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"suffix\": \"string\",\n      \"covered_position\": \"string\",\n      \"is_active_lobbyist\": false\n    },\n    {\n      \"id\": 9495,\n      \"url\": \"http://HEyDjJrcGoamnQmXAYRaXqMBQF.wasdH2D-LVe6AtkcPUO,kE+pfToHWhEG,ww-kqSXhURlX4y.Zuz,c\",\n      \"prefix\": \"string\",\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"suffix\": \"string\",\n      \"covered_position\": \"string\",\n      \"is_active_lobbyist\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bce71e2f-f8d5-40a2-8f7c-34e3ce4b13c1",
+          "name": "Get Lobbyist by ID",
+          "request": {
+            "name": "Get Lobbyist by ID",
+            "description": {
+              "content": "Retrieve a specific lobbyist record by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "lobbyists",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Lobbyist ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "46324466-ae6b-4d48-ad08-0e876eb245f5",
+              "name": "Lobbyist details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lobbyists",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Lobbyist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 5239,\n  \"url\": \"http://BoYYajlzNdYJYOspElesSHtfZPRfEosU.gukoZPrEi3tzSnTx87RI61PozL+GkrLjrxRG0wKimSvjjDkdlxsxIwJC2gVe0Aj7-YAn\",\n  \"prefix\": \"string\",\n  \"first_name\": \"string\",\n  \"last_name\": \"string\",\n  \"suffix\": \"string\",\n  \"covered_position\": \"string\",\n  \"is_active_lobbyist\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7a9dbd2d-c906-4c5b-b994-d2b76b3740bb",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lobbyists",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Lobbyist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "5f856ef5-34ec-477a-83e4-ea47929bd781",
+      "name": "Contributions",
+      "description": {
+        "content": "Semi-annual campaign contribution reports (LD-203)",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8e138009-28d2-4807-8907-e4859ef0adc4",
+          "name": "List Contribution Reports (LD-203)",
+          "request": {
+            "name": "List Contribution Reports (LD-203)",
+            "description": {
+              "content": "Returns a paginated list of semi-annual campaign contribution reports.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contributions",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "registrant_name",
+                  "value": "<string>",
+                  "description": "Filter by registrant name"
+                },
+                {
+                  "disabled": false,
+                  "key": "filing_year",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filing_period",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e6489406-56ba-4690-afd5-03856b9f2a93",
+              "name": "Paginated list of contribution reports",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contributions",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "registrant_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filing_year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "filing_period",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "af63d802-04bd-4235-9d8d-3910bdc285f5",
+      "name": "Constants",
+      "description": {
+        "content": "Reference data — filing types, issue codes, government entities, etc.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "734a6ee1-ea60-4cd6-bae2-2501b1b015fe",
+          "name": "Get Filing Type Codes",
+          "request": {
+            "name": "Get Filing Type Codes",
+            "description": {
+              "content": "Returns all LDA filing type codes and their descriptions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "constants",
+                "filing",
+                "filingtypes",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bd335482-6aee-4719-b1cc-d5964442ce98",
+              "name": "Filing type codes",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "constants",
+                    "filing",
+                    "filingtypes",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5782e65f-8e2d-4527-8519-8da928a0a8de",
+          "name": "Get Lobbying Activity Issue Codes",
+          "request": {
+            "name": "Get Lobbying Activity Issue Codes",
+            "description": {
+              "content": "Returns all issue area codes used to categorize lobbying activities.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "constants",
+                "filing",
+                "lobbyingactivityissues",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "36cae3f2-3f23-4c02-9127-acbb31a990d1",
+              "name": "Issue codes list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "constants",
+                    "filing",
+                    "lobbyingactivityissues",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "66177e7b-25c0-487e-a782-05a35fd6cf78",
+          "name": "Get Government Entity Codes",
+          "request": {
+            "name": "Get Government Entity Codes",
+            "description": {
+              "content": "Returns all government entity codes for lobbied agencies and bodies.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "constants",
+                "filing",
+                "governmententities",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "95b0fdef-7603-4914-9976-e364d15aff89",
+              "name": "Government entity codes",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "constants",
+                    "filing",
+                    "governmententities",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d66a98b2-804c-4cf1-a606-87d8d4b626b8",
+          "name": "Get Country Codes",
+          "request": {
+            "name": "Get Country Codes",
+            "description": {
+              "content": "Returns country code reference data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "constants",
+                "general",
+                "countries",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b2c7b86f-f8c4-435a-a218-8426fd4b19fe",
+              "name": "Country codes",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "constants",
+                    "general",
+                    "countries",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "44e6410a-1997-4c78-9ecf-8308d0da83de",
+          "name": "Get US State Codes",
+          "request": {
+            "name": "Get US State Codes",
+            "description": {
+              "content": "Returns US state code reference data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "constants",
+                "general",
+                "states",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b4ae92f5-bcd2-487a-85ef-c74f85b2b246",
+              "name": "State codes",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "constants",
+                    "general",
+                    "states",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://lda.senate.gov/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d283e3ed-2c54-4814-bacf-848986e43a89",
+    "name": "US Senate Lobbying Disclosure Act (LDA) API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Senate Lobbying Disclosure Act (LDA) REST API provides public access to lobbying filings, registrations, quarterly activity reports (LD-2), and semi-annual contribution reports (LD-203). An optional API key increases the rate limit from 15 to 120 requests per minute.\n\nContact Support:\n Name: Senate Office of Public Records\n Email: lobby@sec.senate.gov",
+      "type": "text/plain"
+    }
+  }
+}
