@@ -1,6 +1,10 @@
 aid: us-senate
 url: https://raw.githubusercontent.com/api-evangelist/us-senate/refs/heads/main/apis.yml
 common:
+  - type: DomainSecurity
+    url: security/us-senate-domain-security.yml
+  - type: Authentication
+    url: authentication/us-senate-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/ussenate
 apis:
