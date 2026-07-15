@@ -1,6 +1,8 @@
 aid: us-senate
 url: https://raw.githubusercontent.com/api-evangelist/us-senate/refs/heads/main/apis.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/us-senate-agentic-access.yml
   - type: DomainSecurity
     url: security/us-senate-domain-security.yml
   - type: Authentication
