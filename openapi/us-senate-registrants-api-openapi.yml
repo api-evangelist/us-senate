@@ -1,0 +1,143 @@
+openapi: 3.0.1
+info:
+  title: US Senate Lobbying Disclosure Act (LDA) Clients Registrants API
+  description: The Senate Lobbying Disclosure Act (LDA) REST API provides public access to lobbying filings, registrations, quarterly activity reports (LD-2), and semi-annual contribution reports (LD-203). An optional API key increases the rate limit from 15 to 120 requests per minute.
+  version: '1.0'
+  contact:
+    name: Senate Office of Public Records
+    email: lobby@sec.senate.gov
+    url: https://lda.senate.gov/api/
+servers:
+- url: https://lda.senate.gov/api/v1
+security:
+- ApiKeyAuth: []
+- {}
+tags:
+- name: Registrants
+  description: Lobbying firm and self-employed lobbyist registrations
+paths:
+  /registrants/:
+    get:
+      tags:
+      - Registrants
+      operationId: listRegistrants
+      summary: List Lobbying Registrants
+      description: Returns a paginated list of lobbying registrants (firms and individuals).
+      parameters:
+      - name: name
+        in: query
+        description: Filter by registrant name (partial match)
+        schema:
+          type: string
+      - name: page
+        in: query
+        schema:
+          type: integer
+          default: 1
+      - name: format
+        in: query
+        schema:
+          type: string
+          enum:
+          - json
+          default: json
+      responses:
+        '200':
+          description: Paginated list of registrants
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RegistrantListResponse'
+  /registrants/{id}/:
+    get:
+      tags:
+      - Registrants
+      operationId: getRegistrant
+      summary: Get Registrant by ID
+      description: Retrieve a specific lobbying registrant by ID.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: Registrant ID
+        schema:
+          type: integer
+      - name: format
+        in: query
+        schema:
+          type: string
+          enum:
+          - json
+          default: json
+      responses:
+        '200':
+          description: Registrant details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Registrant'
+        '404':
+          description: Not found
+components:
+  schemas:
+    Registrant:
+      type: object
+      description: A lobbying firm or self-employed lobbyist registration
+      properties:
+        id:
+          type: integer
+        url:
+          type: string
+          format: uri
+        house_registrant_id:
+          type: integer
+        name:
+          type: string
+          description: Name of the lobbying firm or individual
+        description:
+          type: string
+          nullable: true
+        address_1:
+          type: string
+          nullable: true
+        city:
+          type: string
+          nullable: true
+        state:
+          type: string
+          nullable: true
+        zip:
+          type: string
+          nullable: true
+        country:
+          type: string
+        contact_name:
+          type: string
+        contact_telephone:
+          type: string
+        dt_updated:
+          type: string
+          format: date-time
+    RegistrantListResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          format: uri
+          nullable: true
+        previous:
+          type: string
+          format: uri
+          nullable: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Registrant'
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'Token-based auth. Format: ''Token YOUR_API_KEY'''

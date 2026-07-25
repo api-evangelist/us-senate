@@ -1,0 +1,133 @@
+openapi: 3.0.1
+info:
+  title: US Senate Lobbying Disclosure Act (LDA) Clients API
+  description: The Senate Lobbying Disclosure Act (LDA) REST API provides public access to lobbying filings, registrations, quarterly activity reports (LD-2), and semi-annual contribution reports (LD-203). An optional API key increases the rate limit from 15 to 120 requests per minute.
+  version: '1.0'
+  contact:
+    name: Senate Office of Public Records
+    email: lobby@sec.senate.gov
+    url: https://lda.senate.gov/api/
+servers:
+- url: https://lda.senate.gov/api/v1
+security:
+- ApiKeyAuth: []
+- {}
+tags:
+- name: Clients
+  description: Clients on whose behalf lobbying is conducted
+paths:
+  /clients/:
+    get:
+      tags:
+      - Clients
+      operationId: listClients
+      summary: List Lobbying Clients
+      description: Returns a paginated list of clients on whose behalf lobbying is conducted.
+      parameters:
+      - name: name
+        in: query
+        description: Filter by client name (partial match)
+        schema:
+          type: string
+      - name: page
+        in: query
+        schema:
+          type: integer
+          default: 1
+      - name: format
+        in: query
+        schema:
+          type: string
+          enum:
+          - json
+          default: json
+      responses:
+        '200':
+          description: Paginated list of clients
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClientListResponse'
+  /clients/{id}/:
+    get:
+      tags:
+      - Clients
+      operationId: getClient
+      summary: Get Client by ID
+      description: Retrieve a specific lobbying client by ID.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: Client ID
+        schema:
+          type: integer
+      - name: format
+        in: query
+        schema:
+          type: string
+          enum:
+          - json
+          default: json
+      responses:
+        '200':
+          description: Client details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client'
+        '404':
+          description: Not found
+components:
+  schemas:
+    Client:
+      type: object
+      description: A client on whose behalf lobbying activities are conducted
+      properties:
+        id:
+          type: integer
+        url:
+          type: string
+          format: uri
+        client_id:
+          type: integer
+        name:
+          type: string
+          description: Name of the client organization
+        general_description:
+          type: string
+          nullable: true
+        client_government_entity:
+          type: boolean
+          nullable: true
+        state:
+          type: string
+          nullable: true
+        country:
+          type: string
+        effective_date:
+          type: string
+          format: date
+    ClientListResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          format: uri
+          nullable: true
+        previous:
+          type: string
+          format: uri
+          nullable: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Client'
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'Token-based auth. Format: ''Token YOUR_API_KEY'''

@@ -1,0 +1,65 @@
+openapi: 3.0.1
+info:
+  title: US Senate Lobbying Disclosure Act (LDA) Clients Contributions API
+  description: The Senate Lobbying Disclosure Act (LDA) REST API provides public access to lobbying filings, registrations, quarterly activity reports (LD-2), and semi-annual contribution reports (LD-203). An optional API key increases the rate limit from 15 to 120 requests per minute.
+  version: '1.0'
+  contact:
+    name: Senate Office of Public Records
+    email: lobby@sec.senate.gov
+    url: https://lda.senate.gov/api/
+servers:
+- url: https://lda.senate.gov/api/v1
+security:
+- ApiKeyAuth: []
+- {}
+tags:
+- name: Contributions
+  description: Semi-annual campaign contribution reports (LD-203)
+paths:
+  /contributions/:
+    get:
+      tags:
+      - Contributions
+      operationId: listContributions
+      summary: List Contribution Reports (LD-203)
+      description: Returns a paginated list of semi-annual campaign contribution reports.
+      parameters:
+      - name: registrant_name
+        in: query
+        description: Filter by registrant name
+        schema:
+          type: string
+      - name: filing_year
+        in: query
+        schema:
+          type: integer
+      - name: filing_period
+        in: query
+        schema:
+          type: string
+      - name: page
+        in: query
+        schema:
+          type: integer
+          default: 1
+      - name: format
+        in: query
+        schema:
+          type: string
+          enum:
+          - json
+          default: json
+      responses:
+        '200':
+          description: Paginated list of contribution reports
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'Token-based auth. Format: ''Token YOUR_API_KEY'''

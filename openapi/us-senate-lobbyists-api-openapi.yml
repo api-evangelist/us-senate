@@ -1,0 +1,130 @@
+openapi: 3.0.1
+info:
+  title: US Senate Lobbying Disclosure Act (LDA) Clients Lobbyists API
+  description: The Senate Lobbying Disclosure Act (LDA) REST API provides public access to lobbying filings, registrations, quarterly activity reports (LD-2), and semi-annual contribution reports (LD-203). An optional API key increases the rate limit from 15 to 120 requests per minute.
+  version: '1.0'
+  contact:
+    name: Senate Office of Public Records
+    email: lobby@sec.senate.gov
+    url: https://lda.senate.gov/api/
+servers:
+- url: https://lda.senate.gov/api/v1
+security:
+- ApiKeyAuth: []
+- {}
+tags:
+- name: Lobbyists
+  description: Individual lobbyist records
+paths:
+  /lobbyists/:
+    get:
+      tags:
+      - Lobbyists
+      operationId: listLobbyists
+      summary: List Lobbyists
+      description: Returns a paginated list of individual lobbyist records.
+      parameters:
+      - name: name
+        in: query
+        description: Filter by lobbyist name (partial match)
+        schema:
+          type: string
+      - name: page
+        in: query
+        schema:
+          type: integer
+          default: 1
+      - name: format
+        in: query
+        schema:
+          type: string
+          enum:
+          - json
+          default: json
+      responses:
+        '200':
+          description: Paginated list of lobbyists
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LobbyistListResponse'
+  /lobbyists/{id}/:
+    get:
+      tags:
+      - Lobbyists
+      operationId: getLobbyist
+      summary: Get Lobbyist by ID
+      description: Retrieve a specific lobbyist record by ID.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: Lobbyist ID
+        schema:
+          type: integer
+      - name: format
+        in: query
+        schema:
+          type: string
+          enum:
+          - json
+          default: json
+      responses:
+        '200':
+          description: Lobbyist details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Lobbyist'
+        '404':
+          description: Not found
+components:
+  schemas:
+    LobbyistListResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          format: uri
+          nullable: true
+        previous:
+          type: string
+          format: uri
+          nullable: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Lobbyist'
+    Lobbyist:
+      type: object
+      description: An individual lobbyist
+      properties:
+        id:
+          type: integer
+        url:
+          type: string
+          format: uri
+        prefix:
+          type: string
+          nullable: true
+        first_name:
+          type: string
+        last_name:
+          type: string
+        suffix:
+          type: string
+          nullable: true
+        covered_position:
+          type: string
+          nullable: true
+          description: Former government position if covered official
+        is_active_lobbyist:
+          type: boolean
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'Token-based auth. Format: ''Token YOUR_API_KEY'''

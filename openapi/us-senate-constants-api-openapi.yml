@@ -1,0 +1,131 @@
+openapi: 3.0.1
+info:
+  title: US Senate Lobbying Disclosure Act (LDA) Clients Constants API
+  description: The Senate Lobbying Disclosure Act (LDA) REST API provides public access to lobbying filings, registrations, quarterly activity reports (LD-2), and semi-annual contribution reports (LD-203). An optional API key increases the rate limit from 15 to 120 requests per minute.
+  version: '1.0'
+  contact:
+    name: Senate Office of Public Records
+    email: lobby@sec.senate.gov
+    url: https://lda.senate.gov/api/
+servers:
+- url: https://lda.senate.gov/api/v1
+security:
+- ApiKeyAuth: []
+- {}
+tags:
+- name: Constants
+  description: Reference data — filing types, issue codes, government entities, etc.
+paths:
+  /constants/filing/filingtypes/:
+    get:
+      tags:
+      - Constants
+      operationId: getFilingTypes
+      summary: Get Filing Type Codes
+      description: Returns all LDA filing type codes and their descriptions.
+      parameters:
+      - name: format
+        in: query
+        schema:
+          type: string
+          enum:
+          - json
+          default: json
+      responses:
+        '200':
+          description: Filing type codes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /constants/filing/lobbyingactivityissues/:
+    get:
+      tags:
+      - Constants
+      operationId: getLobbyingIssues
+      summary: Get Lobbying Activity Issue Codes
+      description: Returns all issue area codes used to categorize lobbying activities.
+      parameters:
+      - name: format
+        in: query
+        schema:
+          type: string
+          enum:
+          - json
+          default: json
+      responses:
+        '200':
+          description: Issue codes list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /constants/filing/governmententities/:
+    get:
+      tags:
+      - Constants
+      operationId: getGovernmentEntities
+      summary: Get Government Entity Codes
+      description: Returns all government entity codes for lobbied agencies and bodies.
+      parameters:
+      - name: format
+        in: query
+        schema:
+          type: string
+          enum:
+          - json
+          default: json
+      responses:
+        '200':
+          description: Government entity codes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /constants/general/countries/:
+    get:
+      tags:
+      - Constants
+      operationId: getCountries
+      summary: Get Country Codes
+      description: Returns country code reference data.
+      security: []
+      responses:
+        '200':
+          description: Country codes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /constants/general/states/:
+    get:
+      tags:
+      - Constants
+      operationId: getStates
+      summary: Get US State Codes
+      description: Returns US state code reference data.
+      security: []
+      responses:
+        '200':
+          description: State codes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'Token-based auth. Format: ''Token YOUR_API_KEY'''
