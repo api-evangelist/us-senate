@@ -10,27 +10,84 @@ common:
   - type: LinkedIn
     url: https://www.linkedin.com/company/ussenate
 apis:
-  - aid: us-senate:lda-api
-    name: Senate Lobbying Disclosure Act (LDA) API
-    tags:
-      - Lobbying
-      - Government Transparency
-      - Federal Government
-      - Open Data
-      - Campaign Finance
-    humanURL: https://lda.senate.gov/api/
-    properties:
-      - url: https://lda.senate.gov/api/
-        type: Documentation
-      - url: https://lda.senate.gov/api/redoc/v1/
-        type: Documentation
-      - url: https://raw.githubusercontent.com/api-evangelist/us-senate/refs/heads/main/openapi/us-senate-lda-openapi.yml
-        type: OpenAPI
-    description: >-
-      The Senate Lobbying Disclosure Act (LDA) REST API provides public access to lobbying disclosure filings,
-      registrations, quarterly activity reports (LD-2), and semi-annual contribution reports (LD-203) submitted under
-      the Lobbying Disclosure Act. Includes data on registrants, clients, lobbyists, and lobbying activities. An API key
-      increases rate limits from 15 to 120 requests per minute.
+- aid: us-senate:us-senate-clients-api
+  name: US Senate Clients API
+  description: Clients on whose behalf lobbying is conducted
+  humanURL: https://lda.senate.gov/api/
+  tags:
+  - Clients
+  properties:
+  - type: OpenAPI
+    url: openapi/us-senate-clients-api-openapi.yml
+  - type: Documentation
+    url: https://lda.senate.gov/api/
+  - type: Documentation
+    url: https://lda.senate.gov/api/redoc/v1/
+- aid: us-senate:us-senate-constants-api
+  name: US Senate Constants API
+  description: Reference data — filing types, issue codes, government entities, etc.
+  humanURL: https://lda.senate.gov/api/
+  tags:
+  - Constants
+  properties:
+  - type: OpenAPI
+    url: openapi/us-senate-constants-api-openapi.yml
+  - type: Documentation
+    url: https://lda.senate.gov/api/
+  - type: Documentation
+    url: https://lda.senate.gov/api/redoc/v1/
+- aid: us-senate:us-senate-contributions-api
+  name: US Senate Contributions API
+  description: Semi-annual campaign contribution reports (LD-203)
+  humanURL: https://lda.senate.gov/api/
+  tags:
+  - Contributions
+  properties:
+  - type: OpenAPI
+    url: openapi/us-senate-contributions-api-openapi.yml
+  - type: Documentation
+    url: https://lda.senate.gov/api/
+  - type: Documentation
+    url: https://lda.senate.gov/api/redoc/v1/
+- aid: us-senate:us-senate-filings-api
+  name: US Senate Filings API
+  description: Lobbying disclosure filings (LD-1, LD-2, LD-203)
+  humanURL: https://lda.senate.gov/api/
+  tags:
+  - Filings
+  properties:
+  - type: OpenAPI
+    url: openapi/us-senate-filings-api-openapi.yml
+  - type: Documentation
+    url: https://lda.senate.gov/api/
+  - type: Documentation
+    url: https://lda.senate.gov/api/redoc/v1/
+- aid: us-senate:us-senate-lobbyists-api
+  name: US Senate Lobbyists API
+  description: Individual lobbyist records
+  humanURL: https://lda.senate.gov/api/
+  tags:
+  - Lobbyists
+  properties:
+  - type: OpenAPI
+    url: openapi/us-senate-lobbyists-api-openapi.yml
+  - type: Documentation
+    url: https://lda.senate.gov/api/
+  - type: Documentation
+    url: https://lda.senate.gov/api/redoc/v1/
+- aid: us-senate:us-senate-registrants-api
+  name: US Senate Registrants API
+  description: Lobbying firm and self-employed lobbyist registrations
+  humanURL: https://lda.senate.gov/api/
+  tags:
+  - Registrants
+  properties:
+  - type: OpenAPI
+    url: openapi/us-senate-registrants-api-openapi.yml
+  - type: Documentation
+    url: https://lda.senate.gov/api/
+  - type: Documentation
+    url: https://lda.senate.gov/api/redoc/v1/
 name: US Senate
 tags:
   - Federal Government
@@ -39,7 +96,20 @@ tags:
   - Campaign Finance
   - Open Data
 kind: contract
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/us-senate.png
 access: 3rd-Party
 created: '2024-12-03'
 modified: '2026-05-19'
