@@ -1,0 +1,24 @@
+{
+  "provider": "us-senate",
+  "sources": [
+    "us-senate-clients-api-openapi.yml",
+    "us-senate-constants-api-openapi.yml",
+    "us-senate-contributions-api-openapi.yml",
+    "us-senate-filings-api-openapi.yml",
+    "us-senate-lobbyists-api-openapi.yml",
+    "us-senate-registrants-api-openapi.yml"
+  ],
+  "outputs": [
+    "us-senate-clients-api-openapi.yml",
+    "us-senate-constants-api-openapi.yml",
+    "us-senate-contributions-api-openapi.yml",
+    "us-senate-filings-api-openapi.yml",
+    "us-senate-lobbyists-api-openapi.yml",
+    "us-senate-registrants-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
