@@ -1,0 +1,502 @@
+{
+  "item": [
+    {
+      "id": "ca6b75dd-9f16-4399-944c-11e3787b3e47",
+      "name": "Constants",
+      "description": {
+        "content": "Reference data — filing types, issue codes, government entities, etc.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8c2139fa-fee1-4bb4-a0b6-fe10de437b1c",
+          "name": "Get Filing Type Codes",
+          "request": {
+            "name": "Get Filing Type Codes",
+            "description": {
+              "content": "Returns all LDA filing type codes and their descriptions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "constants",
+                "filing",
+                "filingtypes",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "060fe1cf-43c7-4f65-94c6-648d46ea72e6",
+              "name": "Filing type codes",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "constants",
+                    "filing",
+                    "filingtypes",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8c377b64-4248-41bf-8b36-3d3080a8198e",
+          "name": "Get Lobbying Activity Issue Codes",
+          "request": {
+            "name": "Get Lobbying Activity Issue Codes",
+            "description": {
+              "content": "Returns all issue area codes used to categorize lobbying activities.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "constants",
+                "filing",
+                "lobbyingactivityissues",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dcf75165-3f4a-4244-a5c6-783c941a840b",
+              "name": "Issue codes list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "constants",
+                    "filing",
+                    "lobbyingactivityissues",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c1f5e02e-86b6-47f0-ab4a-8728335efa12",
+          "name": "Get Government Entity Codes",
+          "request": {
+            "name": "Get Government Entity Codes",
+            "description": {
+              "content": "Returns all government entity codes for lobbied agencies and bodies.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "constants",
+                "filing",
+                "governmententities",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6f524ec3-047d-451e-9925-8084cc13b7de",
+              "name": "Government entity codes",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "constants",
+                    "filing",
+                    "governmententities",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "85e72405-13a5-4b91-82a0-bd5cdbcca5dd",
+          "name": "Get Country Codes",
+          "request": {
+            "name": "Get Country Codes",
+            "description": {
+              "content": "Returns country code reference data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "constants",
+                "general",
+                "countries",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "efeeb8d2-8475-4567-a203-9e4c53bb0864",
+              "name": "Country codes",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "constants",
+                    "general",
+                    "countries",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "96409cf8-e96c-4464-8e03-187788030aed",
+          "name": "Get US State Codes",
+          "request": {
+            "name": "Get US State Codes",
+            "description": {
+              "content": "Returns US state code reference data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "constants",
+                "general",
+                "states",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c6b85099-4a6f-4ff9-9f5b-c5198062f5e4",
+              "name": "State codes",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "constants",
+                    "general",
+                    "states",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://lda.senate.gov/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "39ff3c86-517e-469c-84b7-b9b1a5e0f831",
+    "name": "US Senate Lobbying Disclosure Act (LDA) Clients Constants API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Senate Lobbying Disclosure Act (LDA) REST API provides public access to lobbying filings, registrations, quarterly activity reports (LD-2), and semi-annual contribution reports (LD-203). An optional API key increases the rate limit from 15 to 120 requests per minute.\n\nContact Support:\n Name: Senate Office of Public Records\n Email: lobby@sec.senate.gov",
+      "type": "text/plain"
+    }
+  }
+}

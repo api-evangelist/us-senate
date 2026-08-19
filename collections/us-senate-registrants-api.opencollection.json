@@ -1,0 +1,79 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "US Senate Lobbying Disclosure Act (LDA) Clients Registrants API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Registrants",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Lobbying Registrants",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/registrants/",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "Filter by registrant name (partial match)"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of lobbying registrants (firms and individuals)."
+        },
+        {
+          "info": {
+            "name": "Get Registrant by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/registrants/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Registrant ID"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve a specific lobbying registrant by ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

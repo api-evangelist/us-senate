@@ -1,0 +1,322 @@
+{
+  "item": [
+    {
+      "id": "2f9fee00-4b66-485f-945e-463a045675ad",
+      "name": "Lobbyists",
+      "description": {
+        "content": "Individual lobbyist records",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3b7ad9b1-295d-4946-b9bc-6e8c1d3e8b51",
+          "name": "List Lobbyists",
+          "request": {
+            "name": "List Lobbyists",
+            "description": {
+              "content": "Returns a paginated list of individual lobbyist records.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "lobbyists",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Filter by lobbyist name (partial match)"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4aacfe03-6896-4654-a3b2-f5b61ace53e2",
+              "name": "Paginated list of lobbyists",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lobbyists",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 8335,\n  \"next\": \"http://IQxfYOM.fxanTviQTXp7vBja6GwDU5Bh0oRC,IHPdBQedhL86R8LZ8xX-ta2DQdvbVvKsDxHGX8jJHfG2W5DoVqH.IAwD1et0MEq+PJ\",\n  \"previous\": \"http://kTUfUDsuzhvpEJurmPlmG.omwdfA6lMMF7f2Fq6Afx90ZEzjHN4edKW3Xt.W-RcLDafbHyuPOnCFO9Y9jWTJ3zHjeLwmrBSms\",\n  \"results\": [\n    {\n      \"id\": 5787,\n      \"url\": \"https://icKggaHoAm.kvgnQPCfyjgsrrf4verNbVRIZHgxlTrQvhqHeF8uwpesYmTmSp,rlb\",\n      \"prefix\": \"string\",\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"suffix\": \"string\",\n      \"covered_position\": \"string\",\n      \"is_active_lobbyist\": true\n    },\n    {\n      \"id\": 5036,\n      \"url\": \"http://nGLfVUYQUq.lgbg1-1Az+NcFnnTtG,nkWZvtQBpFknWQDG,JVRMB6VSOvyvtk3gY34\",\n      \"prefix\": \"string\",\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"suffix\": \"string\",\n      \"covered_position\": \"string\",\n      \"is_active_lobbyist\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "62ce367a-0455-42dc-b74f-e84adb9a38cc",
+          "name": "Get Lobbyist by ID",
+          "request": {
+            "name": "Get Lobbyist by ID",
+            "description": {
+              "content": "Retrieve a specific lobbyist record by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "lobbyists",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Lobbyist ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c17899f4-7302-4774-9b69-29681e9ff166",
+              "name": "Lobbyist details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lobbyists",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Lobbyist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 1605,\n  \"url\": \"https://mcgbGXbkdgSWXBM.pmorPhzgmcsoD3gFFZ6m,.Isiddo,HV5yWPx6bb\",\n  \"prefix\": \"string\",\n  \"first_name\": \"string\",\n  \"last_name\": \"string\",\n  \"suffix\": \"string\",\n  \"covered_position\": \"string\",\n  \"is_active_lobbyist\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3b9e0d68-6a37-4ea1-aa40-899d8fbeb918",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lobbyists",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Lobbyist ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://lda.senate.gov/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "202c7171-747f-4db9-a8a7-be9e8e11e22f",
+    "name": "US Senate Lobbying Disclosure Act (LDA) Clients Lobbyists API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Senate Lobbying Disclosure Act (LDA) REST API provides public access to lobbying filings, registrations, quarterly activity reports (LD-2), and semi-annual contribution reports (LD-203). An optional API key increases the rate limit from 15 to 120 requests per minute.\n\nContact Support:\n Name: Senate Office of Public Records\n Email: lobby@sec.senate.gov",
+      "type": "text/plain"
+    }
+  }
+}

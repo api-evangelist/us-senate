@@ -1,0 +1,102 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "US Senate Lobbying Disclosure Act (LDA) Clients Constants API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Constants",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Filing Type Codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/constants/filing/filingtypes/",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns all LDA filing type codes and their descriptions."
+        },
+        {
+          "info": {
+            "name": "Get Lobbying Activity Issue Codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/constants/filing/lobbyingactivityissues/",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns all issue area codes used to categorize lobbying activities."
+        },
+        {
+          "info": {
+            "name": "Get Government Entity Codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/constants/filing/governmententities/",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns all government entity codes for lobbied agencies and bodies."
+        },
+        {
+          "info": {
+            "name": "Get Country Codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/constants/general/countries/"
+          },
+          "docs": "Returns country code reference data."
+        },
+        {
+          "info": {
+            "name": "Get US State Codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/constants/general/states/"
+          },
+          "docs": "Returns US state code reference data."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

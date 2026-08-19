@@ -1,0 +1,322 @@
+{
+  "item": [
+    {
+      "id": "c5fa6698-4b65-4667-b60e-2cf9c36bc050",
+      "name": "Registrants",
+      "description": {
+        "content": "Lobbying firm and self-employed lobbyist registrations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a0fe24af-042d-4d09-b59a-a5ab0ee358e4",
+          "name": "List Lobbying Registrants",
+          "request": {
+            "name": "List Lobbying Registrants",
+            "description": {
+              "content": "Returns a paginated list of lobbying registrants (firms and individuals).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "registrants",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Filter by registrant name (partial match)"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "45eb3c30-0dd3-43ab-b6a3-6d71b8f3d35c",
+              "name": "Paginated list of registrants",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrants",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 6843,\n  \"next\": \"https://rsfoTQTwwtHpyLI.vzzuelTKljkNsVb\",\n  \"previous\": \"http://XNuztuEjlTjxJzpzaRRYwgjHeDwMZoxsf.iqdHwJRE7PFCfyjVdnYwEELmWKh1V1xB3CExmQG-ciVFra.ZbeqWW-PW8+oq9xFcemIz4U1tOM92Q8\",\n  \"results\": [\n    {\n      \"id\": 6281,\n      \"url\": \"http://peenDcJITGJXDLbf.wxhzBhfIuBBbGl\",\n      \"house_registrant_id\": 3538,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"address_1\": \"string\",\n      \"city\": \"string\",\n      \"state\": \"string\",\n      \"zip\": \"string\",\n      \"country\": \"string\",\n      \"contact_name\": \"string\",\n      \"contact_telephone\": \"string\",\n      \"dt_updated\": \"1959-10-13T14:23:30.727Z\"\n    },\n    {\n      \"id\": 3462,\n      \"url\": \"https://RHIunjUhLkhJacKxwdGnZom.pfmpCKyMQvvYR.zmlSagQln,QTt,mgeCQJhW\",\n      \"house_registrant_id\": 7541,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"address_1\": \"string\",\n      \"city\": \"string\",\n      \"state\": \"string\",\n      \"zip\": \"string\",\n      \"country\": \"string\",\n      \"contact_name\": \"string\",\n      \"contact_telephone\": \"string\",\n      \"dt_updated\": \"1952-09-18T23:10:37.323Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b57f6afe-4e18-40d6-bcee-5569b9d45106",
+          "name": "Get Registrant by ID",
+          "request": {
+            "name": "Get Registrant by ID",
+            "description": {
+              "content": "Retrieve a specific lobbying registrant by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "registrants",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Registrant ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "793c414f-3647-4995-8ad7-0b4a89442f44",
+              "name": "Registrant details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrants",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Registrant ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 1490,\n  \"url\": \"https://wGm.qalzlYtBlAeZ4-Qe,X.kiq.bPfxi4SI0aXqkMHAY\",\n  \"house_registrant_id\": 3164,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"address_1\": \"string\",\n  \"city\": \"string\",\n  \"state\": \"string\",\n  \"zip\": \"string\",\n  \"country\": \"string\",\n  \"contact_name\": \"string\",\n  \"contact_telephone\": \"string\",\n  \"dt_updated\": \"2017-10-28T10:11:43.119Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "668dc3de-2673-453b-bd68-01df37785046",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrants",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Registrant ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://lda.senate.gov/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "25d4a357-5a0e-4d40-aed9-89662ce4a411",
+    "name": "US Senate Lobbying Disclosure Act (LDA) Clients Registrants API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Senate Lobbying Disclosure Act (LDA) REST API provides public access to lobbying filings, registrations, quarterly activity reports (LD-2), and semi-annual contribution reports (LD-203). An optional API key increases the rate limit from 15 to 120 requests per minute.\n\nContact Support:\n Name: Senate Office of Public Records\n Email: lobby@sec.senate.gov",
+      "type": "text/plain"
+    }
+  }
+}

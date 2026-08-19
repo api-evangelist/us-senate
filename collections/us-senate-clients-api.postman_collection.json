@@ -1,0 +1,322 @@
+{
+  "item": [
+    {
+      "id": "f29a97bd-c229-4441-887f-2044028b2e6a",
+      "name": "Clients",
+      "description": {
+        "content": "Clients on whose behalf lobbying is conducted",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ca8c86d7-27f8-4540-bce2-401f36f21fd3",
+          "name": "List Lobbying Clients",
+          "request": {
+            "name": "List Lobbying Clients",
+            "description": {
+              "content": "Returns a paginated list of clients on whose behalf lobbying is conducted.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "clients",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Filter by client name (partial match)"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1ce2b831-fae2-4948-9d81-d87664f6dac4",
+              "name": "Paginated list of clients",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clients",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 6145,\n  \"next\": \"http://rAFUVWdZsxjLKyxiQjun.qpGwqAJ,kADVXR-QAwb7TPp9\",\n  \"previous\": \"http://a.vcarshr0iWbOJHLAq3KRHuUo-aMBmz+\",\n  \"results\": [\n    {\n      \"id\": 7810,\n      \"url\": \"http://aCepYthqxMgIoIuvVp.uhouAmtIUWb9IT-J+hCQfAFLLnx4Y43mXvrglDEMNODIaBwl\",\n      \"client_id\": 6919,\n      \"name\": \"string\",\n      \"general_description\": \"string\",\n      \"client_government_entity\": false,\n      \"state\": \"string\",\n      \"country\": \"string\",\n      \"effective_date\": \"1989-11-26\"\n    },\n    {\n      \"id\": 8290,\n      \"url\": \"https://IqhcCaRhUeMpBcjkEGdecTfCu.sbsi+lvXsUN9qZuaAL1oHHwjEbyRAy3fkqhUeE,r.eIPcRDEly0mZY1bI.rkB\",\n      \"client_id\": 3812,\n      \"name\": \"string\",\n      \"general_description\": \"string\",\n      \"client_government_entity\": false,\n      \"state\": \"string\",\n      \"country\": \"string\",\n      \"effective_date\": \"1968-12-31\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "52bdf4a6-a46f-467e-b6cc-00d80cd5097e",
+          "name": "Get Client by ID",
+          "request": {
+            "name": "Get Client by ID",
+            "description": {
+              "content": "Retrieve a specific lobbying client by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "clients",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Client ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1e4ac13b-d5b1-4431-93a2-5abb5ed3a8f3",
+              "name": "Client details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clients",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Client ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 6530,\n  \"url\": \"http://rRChlCBElHOJsvk.enuFJalWmiARSLDEBEh3elax0RMekfYY\",\n  \"client_id\": 6341,\n  \"name\": \"string\",\n  \"general_description\": \"string\",\n  \"client_government_entity\": true,\n  \"state\": \"string\",\n  \"country\": \"string\",\n  \"effective_date\": \"1983-10-07\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "42ddb226-fc4d-4550-addb-b9e0751f9ebd",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "clients",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Client ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://lda.senate.gov/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d54597c1-ae7d-4bf0-b5c7-2442c9fe3324",
+    "name": "US Senate Lobbying Disclosure Act (LDA) Clients API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Senate Lobbying Disclosure Act (LDA) REST API provides public access to lobbying filings, registrations, quarterly activity reports (LD-2), and semi-annual contribution reports (LD-203). An optional API key increases the rate limit from 15 to 120 requests per minute.\n\nContact Support:\n Name: Senate Office of Public Records\n Email: lobby@sec.senate.gov",
+      "type": "text/plain"
+    }
+  }
+}

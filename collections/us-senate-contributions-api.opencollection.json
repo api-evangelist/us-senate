@@ -1,0 +1,65 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "US Senate Lobbying Disclosure Act (LDA) Clients Contributions API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Contributions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Contribution Reports (LD-203)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/contributions/",
+            "params": [
+              {
+                "name": "registrant_name",
+                "value": "",
+                "type": "query",
+                "description": "Filter by registrant name"
+              },
+              {
+                "name": "filing_year",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filing_period",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of semi-annual campaign contribution reports."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

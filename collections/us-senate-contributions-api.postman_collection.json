@@ -1,0 +1,177 @@
+{
+  "item": [
+    {
+      "id": "0a4afdd2-74d2-4e56-aaa6-2262913c223d",
+      "name": "Contributions",
+      "description": {
+        "content": "Semi-annual campaign contribution reports (LD-203)",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "88df3ae4-86cb-4f44-9eef-8969a9dedcaf",
+          "name": "List Contribution Reports (LD-203)",
+          "request": {
+            "name": "List Contribution Reports (LD-203)",
+            "description": {
+              "content": "Returns a paginated list of semi-annual campaign contribution reports.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contributions",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "registrant_name",
+                  "value": "<string>",
+                  "description": "Filter by registrant name"
+                },
+                {
+                  "disabled": false,
+                  "key": "filing_year",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filing_period",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "390fd063-fa38-4c5c-bf37-5d2feba1cb05",
+              "name": "Paginated list of contribution reports",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contributions",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "registrant_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filing_year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "filing_period",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://lda.senate.gov/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "51bfccae-2303-4885-b51a-9b6afd82d676",
+    "name": "US Senate Lobbying Disclosure Act (LDA) Clients Contributions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Senate Lobbying Disclosure Act (LDA) REST API provides public access to lobbying filings, registrations, quarterly activity reports (LD-2), and semi-annual contribution reports (LD-203). An optional API key increases the rate limit from 15 to 120 requests per minute.\n\nContact Support:\n Name: Senate Office of Public Records\n Email: lobby@sec.senate.gov",
+      "type": "text/plain"
+    }
+  }
+}

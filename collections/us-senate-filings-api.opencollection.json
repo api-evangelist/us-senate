@@ -1,0 +1,141 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "US Senate Lobbying Disclosure Act (LDA) Clients Filings API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Filings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Lobbying Disclosure Filings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/filings/",
+            "params": [
+              {
+                "name": "filing_type",
+                "value": "",
+                "type": "query",
+                "description": "Filing type code (e.g., LD1=Registration, LD2=Quarterly Report, MM=Mid-Year Report)"
+              },
+              {
+                "name": "filing_year",
+                "value": "",
+                "type": "query",
+                "description": "Year of the filing"
+              },
+              {
+                "name": "filing_period",
+                "value": "",
+                "type": "query",
+                "description": "Filing period (e.g., first_quarter, second_quarter, mid_year, year_end)"
+              },
+              {
+                "name": "registrant_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by registrant ID"
+              },
+              {
+                "name": "client_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by client ID"
+              },
+              {
+                "name": "registrant_name",
+                "value": "",
+                "type": "query",
+                "description": "Filter by registrant name (partial match)"
+              },
+              {
+                "name": "client_name",
+                "value": "",
+                "type": "query",
+                "description": "Filter by client name (partial match)"
+              },
+              {
+                "name": "lobbyist_name",
+                "value": "",
+                "type": "query",
+                "description": "Filter by lobbyist name"
+              },
+              {
+                "name": "issue_code",
+                "value": "",
+                "type": "query",
+                "description": "Filter by lobbying issue code (e.g., TAX, HCR, DEF)"
+              },
+              {
+                "name": "dt_posted",
+                "value": "",
+                "type": "query",
+                "description": "Filter by date posted (ISO 8601 date)"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for pagination"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page (default 25, max 25)"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "Response format"
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of lobbying disclosure filings. Supports filtering by filing type, year, period, registrant, and client."
+        },
+        {
+          "info": {
+            "name": "Get Lobbying Filing by UUID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://lda.senate.gov/api/v1/filings/:filing_uuid/",
+            "params": [
+              {
+                "name": "filing_uuid",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier (UUID) of the filing"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve a specific lobbying disclosure filing by its UUID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

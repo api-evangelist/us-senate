@@ -1,0 +1,610 @@
+{
+  "item": [
+    {
+      "id": "e902cd97-0439-438c-a0c0-84cf44f360a2",
+      "name": "Filings",
+      "description": {
+        "content": "Lobbying disclosure filings (LD-1, LD-2, LD-203)",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d66c7ed1-64ab-425f-b0d6-1f8822a3c85c",
+          "name": "List Lobbying Disclosure Filings",
+          "request": {
+            "name": "List Lobbying Disclosure Filings",
+            "description": {
+              "content": "Returns a paginated list of lobbying disclosure filings. Supports filtering by filing type, year, period, registrant, and client.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "filings",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filing_type",
+                  "value": "<string>",
+                  "description": "Filing type code (e.g., LD1=Registration, LD2=Quarterly Report, MM=Mid-Year Report)"
+                },
+                {
+                  "disabled": false,
+                  "key": "filing_year",
+                  "value": "<integer>",
+                  "description": "Year of the filing"
+                },
+                {
+                  "disabled": false,
+                  "key": "filing_period",
+                  "value": "<string>",
+                  "description": "Filing period (e.g., first_quarter, second_quarter, mid_year, year_end)"
+                },
+                {
+                  "disabled": false,
+                  "key": "registrant_id",
+                  "value": "<integer>",
+                  "description": "Filter by registrant ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "client_id",
+                  "value": "<integer>",
+                  "description": "Filter by client ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "registrant_name",
+                  "value": "<string>",
+                  "description": "Filter by registrant name (partial match)"
+                },
+                {
+                  "disabled": false,
+                  "key": "client_name",
+                  "value": "<string>",
+                  "description": "Filter by client name (partial match)"
+                },
+                {
+                  "disabled": false,
+                  "key": "lobbyist_name",
+                  "value": "<string>",
+                  "description": "Filter by lobbyist name"
+                },
+                {
+                  "disabled": false,
+                  "key": "issue_code",
+                  "value": "<string>",
+                  "description": "Filter by lobbying issue code (e.g., TAX, HCR, DEF)"
+                },
+                {
+                  "disabled": false,
+                  "key": "dt_posted",
+                  "value": "<date>",
+                  "description": "Filter by date posted (ISO 8601 date)"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number for pagination"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25",
+                  "description": "Number of results per page (default 25, max 25)"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "Response format"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7ee78d87-f4df-42c1-b6ff-1762b4040be9",
+              "name": "Paginated list of filings",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "filings",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filing_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filing_year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "filing_period",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "registrant_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "client_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "registrant_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "client_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lobbyist_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "issue_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dt_posted",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 2381,\n  \"next\": \"http://mcrKAozg.wzycVrjwOoc6WWa1.JAUxMA7hzUb,vQjBNn9naPTNEPZZlrdxkgNBp.iLCVsagO\",\n  \"previous\": \"https://gdKYZNIskkvPOgIKKVMsEsZlHfDKvaujy.fnmeTIm2cwjOUI6z2G0pghp,B\",\n  \"results\": [\n    {\n      \"url\": \"http://ZJQTRSBnlbsSeTN.lsdasAoEZJwuXisur\",\n      \"filing_uuid\": \"6dd0d437-ca3e-0b8b-29b2-5a604a7a95f9\",\n      \"filing_type\": \"string\",\n      \"filing_type_display\": \"string\",\n      \"filing_year\": 5587,\n      \"filing_period\": \"string\",\n      \"filing_period_display\": \"string\",\n      \"filing_document_url\": \"http://UFSZkt.tfasBwDxCLhoit,qmhggTcm++BJB\",\n      \"income\": 7085.316158059186,\n      \"expenses\": 6536.373342618453,\n      \"dt_posted\": \"2000-11-02T21:44:46.109Z\",\n      \"registrant\": {\n        \"id\": 9936,\n        \"url\": \"https://obvleqjthGTcIUtzt.jidgfSayR.NuAZT1V+IJsK40Vhj,K1vWqv+\",\n        \"house_registrant_id\": 3456,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"address_1\": \"string\",\n        \"city\": \"string\",\n        \"state\": \"string\",\n        \"zip\": \"string\",\n        \"country\": \"string\",\n        \"contact_name\": \"string\",\n        \"contact_telephone\": \"string\",\n        \"dt_updated\": \"1974-06-16T19:52:49.199Z\"\n      },\n      \"client\": {\n        \"id\": 1849,\n        \"url\": \"http://aFpthGdfse.rwfzQOFfje1tXZFOejN3Mcf8qz0toKbLVs907MtOsY1B\",\n        \"client_id\": 3367,\n        \"name\": \"string\",\n        \"general_description\": \"string\",\n        \"client_government_entity\": true,\n        \"state\": \"string\",\n        \"country\": \"string\",\n        \"effective_date\": \"2024-08-19\"\n      },\n      \"lobbying_activities\": [\n        {\n          \"general_issue_code\": \"string\",\n          \"general_issue_code_display\": \"string\",\n          \"description\": \"string\",\n          \"government_entities\": [\n            {\n              \"name\": \"string\"\n            },\n            {\n              \"name\": \"string\"\n            }\n          ],\n          \"lobbyists\": [\n            {\n              \"lobbyist\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"is_new\": false\n            },\n            {\n              \"lobbyist\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"is_new\": true\n            }\n          ]\n        },\n        {\n          \"general_issue_code\": \"string\",\n          \"general_issue_code_display\": \"string\",\n          \"description\": \"string\",\n          \"government_entities\": [\n            {\n              \"name\": \"string\"\n            },\n            {\n              \"name\": \"string\"\n            }\n          ],\n          \"lobbyists\": [\n            {\n              \"lobbyist\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"is_new\": true\n            },\n            {\n              \"lobbyist\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"is_new\": false\n            }\n          ]\n        }\n      ]\n    },\n    {\n      \"url\": \"http://ofEvwGfkxOPagZeLsRgCbZCJfZ.apyrm8uX1RS-FBzXjJshuQctkkWhAMeNl6O1klNkVs0ZWP\",\n      \"filing_uuid\": \"a4c1f52b-ea14-2944-c07c-941ab12ef68b\",\n      \"filing_type\": \"string\",\n      \"filing_type_display\": \"string\",\n      \"filing_year\": 4429,\n      \"filing_period\": \"string\",\n      \"filing_period_display\": \"string\",\n      \"filing_document_url\": \"http://VFJqWAwaJkXVxJYQM.dnBISC+-GNbkg\",\n      \"income\": 4939.281062150016,\n      \"expenses\": 1240.1743265150233,\n      \"dt_posted\": \"1949-05-14T16:51:56.086Z\",\n      \"registrant\": {\n        \"id\": 5462,\n        \"url\": \"http://wGzlDkYOJEEwXYRxEesukx.yiboy6Mj\",\n        \"house_registrant_id\": 431,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"address_1\": \"string\",\n        \"city\": \"string\",\n        \"state\": \"string\",\n        \"zip\": \"string\",\n        \"country\": \"string\",\n        \"contact_name\": \"string\",\n        \"contact_telephone\": \"string\",\n        \"dt_updated\": \"2006-08-25T02:36:32.323Z\"\n      },\n      \"client\": {\n        \"id\": 728,\n        \"url\": \"https://TRsUBFaQxpVWlILPIICgqGuKmNoQXYV.oscpP\",\n        \"client_id\": 4345,\n        \"name\": \"string\",\n        \"general_description\": \"string\",\n        \"client_government_entity\": true,\n        \"state\": \"string\",\n        \"country\": \"string\",\n        \"effective_date\": \"1994-07-15\"\n      },\n      \"lobbying_activities\": [\n        {\n          \"general_issue_code\": \"string\",\n          \"general_issue_code_display\": \"string\",\n          \"description\": \"string\",\n          \"government_entities\": [\n            {\n              \"name\": \"string\"\n            },\n            {\n              \"name\": \"string\"\n            }\n          ],\n          \"lobbyists\": [\n            {\n              \"lobbyist\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"is_new\": true\n            },\n            {\n              \"lobbyist\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"is_new\": false\n            }\n          ]\n        },\n        {\n          \"general_issue_code\": \"string\",\n          \"general_issue_code_display\": \"string\",\n          \"description\": \"string\",\n          \"government_entities\": [\n            {\n              \"name\": \"string\"\n            },\n            {\n              \"name\": \"string\"\n            }\n          ],\n          \"lobbyists\": [\n            {\n              \"lobbyist\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"is_new\": false\n            },\n            {\n              \"lobbyist\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"is_new\": true\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1f0e88ab-64bc-4f4d-8218-aa925f7751be",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "filings",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filing_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filing_year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "filing_period",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "registrant_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "client_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "registrant_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "client_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lobbyist_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "issue_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dt_posted",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7d4fa698-c8e4-4e8e-88dd-bea5e2ec148e",
+              "name": "Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "filings",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filing_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filing_year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "filing_period",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "registrant_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "client_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "registrant_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "client_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lobbyist_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "issue_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dt_posted",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ce92531c-dbda-4fb7-acd5-50eada716e5d",
+          "name": "Get Lobbying Filing by UUID",
+          "request": {
+            "name": "Get Lobbying Filing by UUID",
+            "description": {
+              "content": "Retrieve a specific lobbying disclosure filing by its UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "filings",
+                ":filing_uuid",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "filing_uuid",
+                  "description": "(Required) Unique identifier (UUID) of the filing"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9911708e-b5cb-47b1-89df-fb77f9078d1b",
+              "name": "Filing details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "filings",
+                    ":filing_uuid",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "filing_uuid",
+                      "description": "(Required) Unique identifier (UUID) of the filing"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"url\": \"https://IMjDX.dkhwP+e7EPc6Q8OVzWFLjy\",\n  \"filing_uuid\": \"d0bb6e24-f450-8dc2-e42d-c1b0887e24d2\",\n  \"filing_type\": \"string\",\n  \"filing_type_display\": \"string\",\n  \"filing_year\": 7594,\n  \"filing_period\": \"string\",\n  \"filing_period_display\": \"string\",\n  \"filing_document_url\": \"https://KQiLvLNMKDLecdSwWGMKgfCUeZnpfSPTT.wprfvXLmd1\",\n  \"income\": 3067.838537679549,\n  \"expenses\": 5880.476587782304,\n  \"dt_posted\": \"2017-08-26T16:58:25.500Z\",\n  \"registrant\": {\n    \"id\": 5907,\n    \"url\": \"http://DXlBvAoDu.lmvLlGJvlBgu\",\n    \"house_registrant_id\": 7853,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"address_1\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"zip\": \"string\",\n    \"country\": \"string\",\n    \"contact_name\": \"string\",\n    \"contact_telephone\": \"string\",\n    \"dt_updated\": \"2006-05-10T15:57:47.208Z\"\n  },\n  \"client\": {\n    \"id\": 4048,\n    \"url\": \"http://YBbxQzeNSPwWJuOetjatfqRcqM.veteTiPp+whC906Y4Ma3rNmHMND0-NrJoGA\",\n    \"client_id\": 7213,\n    \"name\": \"string\",\n    \"general_description\": \"string\",\n    \"client_government_entity\": true,\n    \"state\": \"string\",\n    \"country\": \"string\",\n    \"effective_date\": \"1974-09-06\"\n  },\n  \"lobbying_activities\": [\n    {\n      \"general_issue_code\": \"string\",\n      \"general_issue_code_display\": \"string\",\n      \"description\": \"string\",\n      \"government_entities\": [\n        {\n          \"name\": \"string\"\n        },\n        {\n          \"name\": \"string\"\n        }\n      ],\n      \"lobbyists\": [\n        {\n          \"lobbyist\": {\n            \"id\": 3160,\n            \"url\": \"http://zFljfmvjQhcjrjsWvcLti.sir4plks+LQezBdZN,zVXQUKiBP\",\n            \"prefix\": \"string\",\n            \"first_name\": \"string\",\n            \"last_name\": \"string\",\n            \"suffix\": \"string\",\n            \"covered_position\": \"string\",\n            \"is_active_lobbyist\": false\n          },\n          \"is_new\": false\n        },\n        {\n          \"lobbyist\": {\n            \"id\": 2735,\n            \"url\": \"http://LKINhV.ltlrNly1NTMLJHEZ7NmZZpHCVtlq5,MnJ-X2Ow\",\n            \"prefix\": \"string\",\n            \"first_name\": \"string\",\n            \"last_name\": \"string\",\n            \"suffix\": \"string\",\n            \"covered_position\": \"string\",\n            \"is_active_lobbyist\": false\n          },\n          \"is_new\": true\n        }\n      ]\n    },\n    {\n      \"general_issue_code\": \"string\",\n      \"general_issue_code_display\": \"string\",\n      \"description\": \"string\",\n      \"government_entities\": [\n        {\n          \"name\": \"string\"\n        },\n        {\n          \"name\": \"string\"\n        }\n      ],\n      \"lobbyists\": [\n        {\n          \"lobbyist\": {\n            \"id\": 2020,\n            \"url\": \"http://zY.qePk87RsDi2WiJWlqUGan\",\n            \"prefix\": \"string\",\n            \"first_name\": \"string\",\n            \"last_name\": \"string\",\n            \"suffix\": \"string\",\n            \"covered_position\": \"string\",\n            \"is_active_lobbyist\": false\n          },\n          \"is_new\": false\n        },\n        {\n          \"lobbyist\": {\n            \"id\": 4453,\n            \"url\": \"http://LkWQXIdgH.hwnj64xkm4pMJtUBgxvT8aWt\",\n            \"prefix\": \"string\",\n            \"first_name\": \"string\",\n            \"last_name\": \"string\",\n            \"suffix\": \"string\",\n            \"covered_position\": \"string\",\n            \"is_active_lobbyist\": false\n          },\n          \"is_new\": true\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9ecca145-a439-43d0-984b-4d0bae6d5794",
+              "name": "Filing not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "filings",
+                    ":filing_uuid",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "filing_uuid",
+                      "description": "(Required) Unique identifier (UUID) of the filing"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://lda.senate.gov/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a332c6fb-31e5-4c42-a26c-f77ac75787c8",
+    "name": "US Senate Lobbying Disclosure Act (LDA) Clients Filings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Senate Lobbying Disclosure Act (LDA) REST API provides public access to lobbying filings, registrations, quarterly activity reports (LD-2), and semi-annual contribution reports (LD-203). An optional API key increases the rate limit from 15 to 120 requests per minute.\n\nContact Support:\n Name: Senate Office of Public Records\n Email: lobby@sec.senate.gov",
+      "type": "text/plain"
+    }
+  }
+}
