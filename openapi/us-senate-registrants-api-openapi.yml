@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: US Senate Lobbying Disclosure Act (LDA) Clients Registrants API
+  title: US Senate Lobbying Disclosure Act (LDA) Registrants API
   description: The Senate Lobbying Disclosure Act (LDA) REST API provides public access to lobbying filings, registrations, quarterly activity reports (LD-2), and semi-annual contribution reports (LD-203). An optional API key increases the rate limit from 15 to 120 requests per minute.
   version: '1.0'
   contact:
@@ -80,6 +80,25 @@ paths:
           description: Not found
 components:
   schemas:
+    RegistrantListResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Registrant'
     Registrant:
       type: object
       description: A lobbying firm or self-employed lobbyist registration
@@ -95,20 +114,25 @@ components:
           type: string
           description: Name of the lobbying firm or individual
         description:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         address_1:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         city:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         state:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         zip:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         country:
           type: string
         contact_name:
@@ -118,23 +142,6 @@ components:
         dt_updated:
           type: string
           format: date-time
-    RegistrantListResponse:
-      type: object
-      properties:
-        count:
-          type: integer
-        next:
-          type: string
-          format: uri
-          nullable: true
-        previous:
-          type: string
-          format: uri
-          nullable: true
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Registrant'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

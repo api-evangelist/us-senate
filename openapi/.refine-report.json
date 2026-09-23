@@ -1,12 +1,7 @@
 {
   "provider": "us-senate",
   "sources": [
-    "us-senate-clients-api-openapi.yml",
-    "us-senate-constants-api-openapi.yml",
-    "us-senate-contributions-api-openapi.yml",
-    "us-senate-filings-api-openapi.yml",
-    "us-senate-lobbyists-api-openapi.yml",
-    "us-senate-registrants-api-openapi.yml"
+    "_original/us-senate-lda-openapi.yml"
   ],
   "outputs": [
     "us-senate-clients-api-openapi.yml",
@@ -19,6 +14,17 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "us-senate-lda-openapi.yml: upgraded openapi 3.0.1 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "us-senate-clients-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "us-senate-constants-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "us-senate-contributions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "us-senate-filings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "us-senate-lobbyists-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "us-senate-registrants-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

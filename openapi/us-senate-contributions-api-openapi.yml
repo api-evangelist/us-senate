@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: US Senate Lobbying Disclosure Act (LDA) Clients Contributions API
+  title: US Senate Lobbying Disclosure Act (LDA) Contributions API
   description: The Senate Lobbying Disclosure Act (LDA) REST API provides public access to lobbying filings, registrations, quarterly activity reports (LD-2), and semi-annual contribution reports (LD-203). An optional API key increases the rate limit from 15 to 120 requests per minute.
   version: '1.0'
   contact:

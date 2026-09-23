@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: US Senate Lobbying Disclosure Act (LDA) Clients Filings API
+  title: US Senate Lobbying Disclosure Act (LDA) Filings API
   description: The Senate Lobbying Disclosure Act (LDA) REST API provides public access to lobbying filings, registrations, quarterly activity reports (LD-2), and semi-annual contribution reports (LD-203). An optional API key increases the rate limit from 15 to 120 requests per minute.
   version: '1.0'
   contact:
@@ -150,67 +150,24 @@ components:
           type: string
           format: uri
         prefix:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         first_name:
           type: string
         last_name:
           type: string
         suffix:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         covered_position:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: Former government position if covered official
         is_active_lobbyist:
           type: boolean
-    Client:
-      type: object
-      description: A client on whose behalf lobbying activities are conducted
-      properties:
-        id:
-          type: integer
-        url:
-          type: string
-          format: uri
-        client_id:
-          type: integer
-        name:
-          type: string
-          description: Name of the client organization
-        general_description:
-          type: string
-          nullable: true
-        client_government_entity:
-          type: boolean
-          nullable: true
-        state:
-          type: string
-          nullable: true
-        country:
-          type: string
-        effective_date:
-          type: string
-          format: date
-    FilingListResponse:
-      type: object
-      properties:
-        count:
-          type: integer
-          description: Total number of matching filings
-        next:
-          type: string
-          format: uri
-          nullable: true
-        previous:
-          type: string
-          format: uri
-          nullable: true
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Filing'
     Filing:
       type: object
       description: A lobbying disclosure filing (LD-1, LD-2, or LD-203)
@@ -239,12 +196,14 @@ components:
           format: uri
           description: URL to the PDF version of the filing
         income:
-          type: number
-          nullable: true
+          type:
+          - number
+          - 'null'
           description: Reported lobbying income (for lobbying firms)
         expenses:
-          type: number
-          nullable: true
+          type:
+          - number
+          - 'null'
           description: Reported lobbying expenses (for self-employed lobbyists)
         dt_posted:
           type: string
@@ -257,6 +216,26 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/LobbyingActivity'
+    FilingListResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+          description: Total number of matching filings
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Filing'
     Registrant:
       type: object
       description: A lobbying firm or self-employed lobbyist registration
@@ -272,20 +251,25 @@ components:
           type: string
           description: Name of the lobbying firm or individual
         description:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         address_1:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         city:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         state:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         zip:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         country:
           type: string
         contact_name:
@@ -295,6 +279,37 @@ components:
         dt_updated:
           type: string
           format: date-time
+    Client:
+      type: object
+      description: A client on whose behalf lobbying activities are conducted
+      properties:
+        id:
+          type: integer
+        url:
+          type: string
+          format: uri
+        client_id:
+          type: integer
+        name:
+          type: string
+          description: Name of the client organization
+        general_description:
+          type:
+          - string
+          - 'null'
+        client_government_entity:
+          type:
+          - boolean
+          - 'null'
+        state:
+          type:
+          - string
+          - 'null'
+        country:
+          type: string
+        effective_date:
+          type: string
+          format: date
     LobbyingActivity:
       type: object
       description: A lobbying activity record within a filing
@@ -305,8 +320,9 @@ components:
         general_issue_code_display:
           type: string
         description:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: Specific issues lobbied on
         government_entities:
           type: array

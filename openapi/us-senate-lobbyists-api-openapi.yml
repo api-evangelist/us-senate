@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: US Senate Lobbying Disclosure Act (LDA) Clients Lobbyists API
+  title: US Senate Lobbying Disclosure Act (LDA) Lobbyists API
   description: The Senate Lobbying Disclosure Act (LDA) REST API provides public access to lobbying filings, registrations, quarterly activity reports (LD-2), and semi-annual contribution reports (LD-203). An optional API key increases the rate limit from 15 to 120 requests per minute.
   version: '1.0'
   contact:
@@ -80,23 +80,6 @@ paths:
           description: Not found
 components:
   schemas:
-    LobbyistListResponse:
-      type: object
-      properties:
-        count:
-          type: integer
-        next:
-          type: string
-          format: uri
-          nullable: true
-        previous:
-          type: string
-          format: uri
-          nullable: true
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Lobbyist'
     Lobbyist:
       type: object
       description: An individual lobbyist
@@ -107,21 +90,43 @@ components:
           type: string
           format: uri
         prefix:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         first_name:
           type: string
         last_name:
           type: string
         suffix:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         covered_position:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: Former government position if covered official
         is_active_lobbyist:
           type: boolean
+    LobbyistListResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Lobbyist'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
