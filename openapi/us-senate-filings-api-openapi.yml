@@ -168,6 +168,69 @@ components:
           description: Former government position if covered official
         is_active_lobbyist:
           type: boolean
+    Registrant:
+      type: object
+      description: A lobbying firm or self-employed lobbyist registration
+      properties:
+        id:
+          type: integer
+        url:
+          type: string
+          format: uri
+        house_registrant_id:
+          type: integer
+        name:
+          type: string
+          description: Name of the lobbying firm or individual
+        description:
+          type:
+          - string
+          - 'null'
+        address_1:
+          type:
+          - string
+          - 'null'
+        city:
+          type:
+          - string
+          - 'null'
+        state:
+          type:
+          - string
+          - 'null'
+        zip:
+          type:
+          - string
+          - 'null'
+        country:
+          type: string
+        contact_name:
+          type: string
+        contact_telephone:
+          type: string
+        dt_updated:
+          type: string
+          format: date-time
+    FilingListResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+          description: Total number of matching filings
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Filing'
     Filing:
       type: object
       description: A lobbying disclosure filing (LD-1, LD-2, or LD-203)
@@ -216,100 +279,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/LobbyingActivity'
-    FilingListResponse:
-      type: object
-      properties:
-        count:
-          type: integer
-          description: Total number of matching filings
-        next:
-          type:
-          - string
-          - 'null'
-          format: uri
-        previous:
-          type:
-          - string
-          - 'null'
-          format: uri
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Filing'
-    Registrant:
-      type: object
-      description: A lobbying firm or self-employed lobbyist registration
-      properties:
-        id:
-          type: integer
-        url:
-          type: string
-          format: uri
-        house_registrant_id:
-          type: integer
-        name:
-          type: string
-          description: Name of the lobbying firm or individual
-        description:
-          type:
-          - string
-          - 'null'
-        address_1:
-          type:
-          - string
-          - 'null'
-        city:
-          type:
-          - string
-          - 'null'
-        state:
-          type:
-          - string
-          - 'null'
-        zip:
-          type:
-          - string
-          - 'null'
-        country:
-          type: string
-        contact_name:
-          type: string
-        contact_telephone:
-          type: string
-        dt_updated:
-          type: string
-          format: date-time
-    Client:
-      type: object
-      description: A client on whose behalf lobbying activities are conducted
-      properties:
-        id:
-          type: integer
-        url:
-          type: string
-          format: uri
-        client_id:
-          type: integer
-        name:
-          type: string
-          description: Name of the client organization
-        general_description:
-          type:
-          - string
-          - 'null'
-        client_government_entity:
-          type:
-          - boolean
-          - 'null'
-        state:
-          type:
-          - string
-          - 'null'
-        country:
-          type: string
-        effective_date:
-          type: string
-          format: date
     LobbyingActivity:
       type: object
       description: A lobbying activity record within a filing
@@ -341,6 +310,37 @@ components:
                 $ref: '#/components/schemas/Lobbyist'
               is_new:
                 type: boolean
+    Client:
+      type: object
+      description: A client on whose behalf lobbying activities are conducted
+      properties:
+        id:
+          type: integer
+        url:
+          type: string
+          format: uri
+        client_id:
+          type: integer
+        name:
+          type: string
+          description: Name of the client organization
+        general_description:
+          type:
+          - string
+          - 'null'
+        client_government_entity:
+          type:
+          - boolean
+          - 'null'
+        state:
+          type:
+          - string
+          - 'null'
+        country:
+          type: string
+        effective_date:
+          type: string
+          format: date
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

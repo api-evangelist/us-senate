@@ -80,25 +80,6 @@ paths:
           description: Not found
 components:
   schemas:
-    RegistrantListResponse:
-      type: object
-      properties:
-        count:
-          type: integer
-        next:
-          type:
-          - string
-          - 'null'
-          format: uri
-        previous:
-          type:
-          - string
-          - 'null'
-          format: uri
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Registrant'
     Registrant:
       type: object
       description: A lobbying firm or self-employed lobbyist registration
@@ -142,6 +123,25 @@ components:
         dt_updated:
           type: string
           format: date-time
+    RegistrantListResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Registrant'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

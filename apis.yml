@@ -90,7 +90,7 @@ apis:
     url: https://lda.senate.gov/api/redoc/v1/
 name: US Senate
 tags:
-  - Federal-Government
+  - Federal Government
   - Lobbying
   - Government Transparency
   - Campaign Finance
@@ -101,6 +101,7 @@ tags_raw:
   - Government Transparency
   - Campaign Finance
   - Open Data
+  - Federal-Government
 kind: contract
 deliveryModel:
   model: unknown
