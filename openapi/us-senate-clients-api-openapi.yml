@@ -80,6 +80,25 @@ paths:
           description: Not found
 components:
   schemas:
+    ClientListResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Client'
     Client:
       type: object
       description: A client on whose behalf lobbying activities are conducted
@@ -111,25 +130,6 @@ components:
         effective_date:
           type: string
           format: date
-    ClientListResponse:
-      type: object
-      properties:
-        count:
-          type: integer
-        next:
-          type:
-          - string
-          - 'null'
-          format: uri
-        previous:
-          type:
-          - string
-          - 'null'
-          format: uri
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Client'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

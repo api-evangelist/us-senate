@@ -140,49 +140,37 @@ paths:
           description: Filing not found
 components:
   schemas:
-    Registrant:
+    LobbyingActivity:
       type: object
-      description: A lobbying firm or self-employed lobbyist registration
+      description: A lobbying activity record within a filing
       properties:
-        id:
-          type: integer
-        url:
+        general_issue_code:
           type: string
-          format: uri
-        house_registrant_id:
-          type: integer
-        name:
+          description: Issue area code (e.g., TAX, HCR, DEF)
+        general_issue_code_display:
           type: string
-          description: Name of the lobbying firm or individual
         description:
           type:
           - string
           - 'null'
-        address_1:
-          type:
-          - string
-          - 'null'
-        city:
-          type:
-          - string
-          - 'null'
-        state:
-          type:
-          - string
-          - 'null'
-        zip:
-          type:
-          - string
-          - 'null'
-        country:
-          type: string
-        contact_name:
-          type: string
-        contact_telephone:
-          type: string
-        dt_updated:
-          type: string
-          format: date-time
+          description: Specific issues lobbied on
+        government_entities:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+          description: Government bodies lobbied
+        lobbyists:
+          type: array
+          items:
+            type: object
+            properties:
+              lobbyist:
+                $ref: '#/components/schemas/Lobbyist'
+              is_new:
+                type: boolean
     FilingListResponse:
       type: object
       properties:
@@ -203,65 +191,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Filing'
-    Client:
-      type: object
-      description: A client on whose behalf lobbying activities are conducted
-      properties:
-        id:
-          type: integer
-        url:
-          type: string
-          format: uri
-        client_id:
-          type: integer
-        name:
-          type: string
-          description: Name of the client organization
-        general_description:
-          type:
-          - string
-          - 'null'
-        client_government_entity:
-          type:
-          - boolean
-          - 'null'
-        state:
-          type:
-          - string
-          - 'null'
-        country:
-          type: string
-        effective_date:
-          type: string
-          format: date
-    Lobbyist:
-      type: object
-      description: An individual lobbyist
-      properties:
-        id:
-          type: integer
-        url:
-          type: string
-          format: uri
-        prefix:
-          type:
-          - string
-          - 'null'
-        first_name:
-          type: string
-        last_name:
-          type: string
-        suffix:
-          type:
-          - string
-          - 'null'
-        covered_position:
-          type:
-          - string
-          - 'null'
-          description: Former government position if covered official
-        is_active_lobbyist:
-          type: boolean
     Filing:
       type: object
       description: A lobbying disclosure filing (LD-1, LD-2, or LD-203)
@@ -310,37 +239,108 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/LobbyingActivity'
-    LobbyingActivity:
+    Registrant:
       type: object
-      description: A lobbying activity record within a filing
+      description: A lobbying firm or self-employed lobbyist registration
       properties:
-        general_issue_code:
+        id:
+          type: integer
+        url:
           type: string
-          description: Issue area code (e.g., TAX, HCR, DEF)
-        general_issue_code_display:
+          format: uri
+        house_registrant_id:
+          type: integer
+        name:
           type: string
+          description: Name of the lobbying firm or individual
         description:
           type:
           - string
           - 'null'
-          description: Specific issues lobbied on
-        government_entities:
-          type: array
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-          description: Government bodies lobbied
-        lobbyists:
-          type: array
-          items:
-            type: object
-            properties:
-              lobbyist:
-                $ref: '#/components/schemas/Lobbyist'
-              is_new:
-                type: boolean
+        address_1:
+          type:
+          - string
+          - 'null'
+        city:
+          type:
+          - string
+          - 'null'
+        state:
+          type:
+          - string
+          - 'null'
+        zip:
+          type:
+          - string
+          - 'null'
+        country:
+          type: string
+        contact_name:
+          type: string
+        contact_telephone:
+          type: string
+        dt_updated:
+          type: string
+          format: date-time
+    Lobbyist:
+      type: object
+      description: An individual lobbyist
+      properties:
+        id:
+          type: integer
+        url:
+          type: string
+          format: uri
+        prefix:
+          type:
+          - string
+          - 'null'
+        first_name:
+          type: string
+        last_name:
+          type: string
+        suffix:
+          type:
+          - string
+          - 'null'
+        covered_position:
+          type:
+          - string
+          - 'null'
+          description: Former government position if covered official
+        is_active_lobbyist:
+          type: boolean
+    Client:
+      type: object
+      description: A client on whose behalf lobbying activities are conducted
+      properties:
+        id:
+          type: integer
+        url:
+          type: string
+          format: uri
+        client_id:
+          type: integer
+        name:
+          type: string
+          description: Name of the client organization
+        general_description:
+          type:
+          - string
+          - 'null'
+        client_government_entity:
+          type:
+          - boolean
+          - 'null'
+        state:
+          type:
+          - string
+          - 'null'
+        country:
+          type: string
+        effective_date:
+          type: string
+          format: date
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

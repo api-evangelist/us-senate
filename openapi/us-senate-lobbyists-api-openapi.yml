@@ -80,6 +80,25 @@ paths:
           description: Not found
 components:
   schemas:
+    LobbyistListResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type:
+          - string
+          - 'null'
+          format: uri
+        previous:
+          type:
+          - string
+          - 'null'
+          format: uri
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Lobbyist'
     Lobbyist:
       type: object
       description: An individual lobbyist
@@ -108,25 +127,6 @@ components:
           description: Former government position if covered official
         is_active_lobbyist:
           type: boolean
-    LobbyistListResponse:
-      type: object
-      properties:
-        count:
-          type: integer
-        next:
-          type:
-          - string
-          - 'null'
-          format: uri
-        previous:
-          type:
-          - string
-          - 'null'
-          format: uri
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Lobbyist'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
