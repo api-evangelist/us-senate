@@ -1,4 +1,4 @@
-# US Senate (us-senate)
+# US Senate
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,55 +66,120 @@
 
 The United States Senate is one of the two chambers of Congress, responsible for representing the interests of the individual states and ensuring that federal legislation is passed in a fair and representative manner. The Senate plays a crucial role in the legislative process, with its members debating and voting on bills and resolutions that affect the country as a whole. The Senate also administers the Lobbying Disclosure Act (LDA) reporting system, which requires lobbyists and lobbying firms to register and report their activities, clients, and campaign contributions for public transparency.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/us-senate/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/us-senate/refs/heads/main/apis.yml)
+**Areas:** Federal Government · Lobbying · Government Transparency · Campaign Finance · Open Data
 
-## Scope
+## US Senate on APIs.io
 
-- **Position:** Consuming
-- **Access:** 3rd-Party
+Everything profiled for US Senate is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/us-senate/](https://apis.io/providers/us-senate/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (6)
 
-- Federal Government
-- Lobbying
-- Government Transparency
-- Campaign Finance
-- Open Data
+- [US Senate Clients API](https://apis.io/apis/us-senate/us-senate-clients-api/) — Clients on whose behalf lobbying is conducted
+- [US Senate Constants API](https://apis.io/apis/us-senate/us-senate-constants-api/) — Reference data — filing types, issue codes, government entities, etc.
+- [US Senate Contributions API](https://apis.io/apis/us-senate/us-senate-contributions-api/) — Semi-annual campaign contribution reports (LD-203)
+- [US Senate Filings API](https://apis.io/apis/us-senate/us-senate-filings-api/) — Lobbying disclosure filings (LD-1, LD-2, LD-203)
+- [US Senate Lobbyists API](https://apis.io/apis/us-senate/us-senate-lobbyists-api/) — Individual lobbyist records
+- [US Senate Registrants API](https://apis.io/apis/us-senate/us-senate-registrants-api/) — Lobbying firm and self-employed lobbyist registrations
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-12-03
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Senate Lobbying Disclosure Act (LDA) API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Senate Lobbying Disclosure Act (LDA) REST API provides public access to lobbying disclosure filings, registrations, quarterly activity reports (LD-2), and semi-annual contribution reports (LD-203) submitted under the Lobbying Disclosure Act. Includes data on registrants, clients, lobbyists, and lobbying activities. An API key increases rate limits from 15 to 120 requests per minute.
+- [Us Senate Agentic Access](https://apis.io/agentic-access/us-senate/us-senate-agentic-access/)
 
-- **Human URL:** [https://lda.senate.gov/api/](https://lda.senate.gov/api/)
+#### JSON Schema (1)
 
-#### Tags
+The data models the API reads and writes.
 
-- Lobbying
-- Government Transparency
-- Federal Government
-- Open Data
-- Campaign Finance
+- [Senate LDA Lobbying Filing](https://apis.io/schemas/us-senate/us-senate-lda-filing/)
 
-#### Properties
+#### JSON Structure (1)
 
-- [Documentation](https://lda.senate.gov/api/)
-- [Documentation](https://lda.senate.gov/api/redoc/v1/)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/us-senate/refs/heads/main/openapi/us-senate-lda-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/us-senate-lda.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/us-senate-lda.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Data models expressed in JSON Structure.
 
-## Common Properties
+- [Us Senate Lda Filing Structure](https://apis.io/json-structure/us-senate/us-senate-lda-filing-structure/)
 
-- [LinkedIn](https://www.linkedin.com/company/ussenate)
+#### JSON-LD (1)
 
-## Maintainers
+Linked-data contexts for the provider's vocabulary.
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+- [Us Senate Context](https://apis.io/jsonld/us-senate/us-senate-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [US Senate Lobbying Disclosure Vocabulary](https://apis.io/vocabularies/us-senate/us-senate-vocabulary/)
+
+#### Examples (2)
+
+Example requests and responses.
+
+- [Lda Get Registrant Example](https://apis.io/examples/us-senate/lda-get-registrant-example/)
+- [Lda List Filings Example](https://apis.io/examples/us-senate/lda-list-filings-example/)
+
+#### Collections (7)
+
+Postman and Open Collection request collections.
+
+- [US Senate Lobbying Disclosure Act (LDA) Clients API](https://apis.io/collections/us-senate/open-us-senate-clients-api/)
+- [US Senate Lobbying Disclosure Act (LDA) Clients Constants API](https://apis.io/collections/us-senate/open-us-senate-constants-api/)
+- [US Senate Lobbying Disclosure Act (LDA) Clients Contributions API](https://apis.io/collections/us-senate/open-us-senate-contributions-api/)
+- [US Senate Lobbying Disclosure Act (LDA) Clients Filings API](https://apis.io/collections/us-senate/open-us-senate-filings-api/)
+- [US Senate Lobbying Disclosure Act (LDA) API](https://apis.io/collections/us-senate/open-us-senate-lda/)
+- [US Senate Lobbying Disclosure Act (LDA) Clients Lobbyists API](https://apis.io/collections/us-senate/open-us-senate-lobbyists-api/)
+- [US Senate Lobbying Disclosure Act (LDA) Clients Registrants API](https://apis.io/collections/us-senate/open-us-senate-registrants-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [US Senate — jsonschema rules](https://apis.io/rules/us-senate/us-senate-jsonschema-spectral-rules/)
+- [US Senate API Rules](https://apis.io/rules/us-senate/us-senate-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Us Senate Authentication](https://apis.io/security/us-senate/us-senate-authentication/)
+- [Us Senate Domain Security](https://apis.io/security/us-senate/us-senate-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Us Senate Plans Pricing](https://apis.io/plans/us-senate/us-senate-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Us Senate Rate Limits](https://apis.io/rate-limits/us-senate/us-senate-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Us Senate Finops](https://apis.io/finops/us-senate/us-senate-finops/)
+
+## API Evangelist rating
+
+**Unrated** — no public website could be reached for this company, so there was almost nothing to measure and nothing a reader could check.
+
+This is not a score of zero. No rating is published for this company. If that is wrong because something public exists that we missed, say so on this repository or email [info@apievangelist.com](mailto:info@apievangelist.com) and it will be re-run — free, and no justification needed.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for US Senate: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/us-senate/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
